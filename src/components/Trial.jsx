@@ -1,6 +1,7 @@
 import { GrDocumentVerified } from "react-icons/gr";
-
+import { useNavigate } from "react-router-dom";
 const Trial = () => {
+  const navigate = useNavigate()
   return (
     <div className="bg-trial bg-cover bg-center h-[350px]">
       <div className="lg:pl-[110px]">
@@ -19,8 +20,9 @@ const Trial = () => {
               Let us help you identify and mitigate risks with a personalized
               security assessment from our professionals.
             </div>
-            <button className="flex flex-row font-bold  text-white p-3 ml-[38px] mt-5 bg-[#004AAD]">
+            <button className="flex flex-row font-bold  text-white p-3 ml-[38px] mt-5 bg-[#004AAD]" onClick={() => navigate("/contact")}>
               <GrDocumentVerified className="mt-1 mr-2" /> BOOK A FREE CALL
+              
             </button>
           </div>
         </div>

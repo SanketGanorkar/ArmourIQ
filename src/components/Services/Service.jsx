@@ -59,12 +59,12 @@ function Service(props) {
   return (
     <div className="overflow-x-hidden">
       <div className="relative ">
-      <div className="bg-[rgba(0,74,173,1.00)] h-[260px] "></div>
-      <div className="absolute inset-0 flex items-center justify-center">
-      <div className="text-4xl md:text-[45px] text-white font-semibold mt-[80px] max-sm:mt-[70px] max-sm:text-3xl">
-        {services[param].topic}
-      </div>
-    </div>
+        <div className="bg-[rgba(0,74,173,1.00)] h-[260px] "></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-4xl md:text-[45px] text-white font-semibold mt-[80px] max-sm:mt-[70px] max-sm:text-3xl">
+            {services[param].topic}
+          </div>
+        </div>
       </div>
       {/* opacity-65 */}
       <div className="content">
@@ -163,6 +163,24 @@ function Service(props) {
           <div className="contact-in-services flex flex-col ">
             <div className="lg:w-[60%]">
               <p className="extra-con-para">{services[param].getInTouch}</p>
+            </div>
+          </div>
+          <div className="p-10 pt-0 lg:mt-2 flex flex-col justify-center items-center">
+            <h1 className="font-bold text-4xl max-sm:text-2xl">
+              Frequently Asked Questions
+            </h1>
+            <h3 className="font-normal text-xl text-gray-500 mt-2">
+              Your Queries, Our Answers
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-5 mt-5">
+              {services?.[param]?.faq?.map((faqItem, index) => (
+                <details key={index} className="mb-5" name="accordian">
+                  <summary className="font-bold text-xl cursor-pointer">
+                    {faqItem.question}
+                  </summary>
+                  <p className="text-gray-500">{faqItem.answer}</p>
+                </details>
+              ))}
             </div>
           </div>
           <div className="flex flex-row mt-10 lg:px-1 ml-7 max-sm:ml-1 max-sm:flex-col">

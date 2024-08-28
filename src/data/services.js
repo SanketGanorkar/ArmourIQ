@@ -1,53 +1,84 @@
 export const services = {
-    cloud: {
-        topic: "Cloud Security Services",
-        image: "/Cloud.jpg",
-        heading1: "Configuration Audit",
-        heading2: "(AWS, Azure, Google & Other SaaS products)",
-        content: "Ensure your cloud infrastructure is secure with ArmourIQ's expert Cloud Security Configuration Audit service. Whether you operate on AWS, Azure, Google Cloud, or other SaaS platforms, our comprehensive audits help you identify and mitigate security risks effectively.",
+  cloud: {
+    topic: "Mobile Security Services",
+        image: "/Mobile.jpg",
+        heading1: "End-to-End Mobile Security",
+        heading2: "( Safeguarding Your Devices and Data ) ",
+        content: "Ensure the highest level of protection for your mobile applications with ArmourIQ’s Mobile Security services. Our expert team is dedicated to defending your apps against the latest threats, ensuring your data remains secure and your users stay safe. Contact us today to learn how we can help you achieve robust mobile security.",
         approaches: {
             head: "Our Approach",
             data: [
                 {
-                    approachHead: "Comprehensive Assessment",
-                    content: "We conduct thorough audits of your AWS, Azure, Google Cloud, and SaaS configurations to identify vulnerabilities and misconfigurations."
+                    approachHead: "Assessment",
+                    content: "Identifying customer needs and conducting a risk assessment."
                 },
                 {
-                    approachHead: "Customised Recommendations",
-                    content: "Receive actionable insights and personalised recommendations to enhance your cloud security framework, tailored to your specific business needs."
+                    approachHead: "Policy Development",
+                    content: "Creating and enforcing mobile security policies."
                 },
                 {
-                    approachHead: "Continuous Monitoring",
-                    content: "Benefit from ongoing monitoring and support to proactively address emerging threats and maintain robust security."
+                    approachHead: "Device Management",
+                    content: "Implementing Mobile Device Management (MDM) solutions."
+                },
+                {
+                    approachHead: "User Education",
+                    content: "Training users on mobile security best practices."
+                },
+                {
+                    approachHead: "Incident Response",
+                    content: "Developing and regularly testing an incident response plan."
+                },
+                {
+                    approachHead: "Continuous Improvement",
+                    content: "Performing regular audits and updating policies as needed."
                 },
             ]
         },
         benefits: {
-            head: "Key Benefits",
+            head: "What You Get",
             data: [
                 {
                     title: "Enhanced Security",
-                    explain: "Strengthen your defences against cyber threats with proactive identification and resolution of security gaps."
+                    explain: " Strengthen your mobile apps' defenses against cyber threats with proactive testing and remediation."
+                },
+                {
+                    title: "Protect User Data",
+                    explain: "Safeguard sensitive user information from potential breaches and unauthorized access."
                 },
                 {
                     title: "Compliance Assurance",
-                    explain: "Ensure adherence to regulatory requirements and industry standards with our detailed compliance reports."
-                },
-                {
-                    title: "Cost Efficiency",
-                    explain: "Prevent potential security breaches that could result in costly downtime and data breaches."
+                    explain: "Ensure compliance with regulatory requirements and industry standards, demonstrating your commitment to security and privacy."
                 },
                 {
                     title: "Peace of Mind",
-                    explain: "Rest assured knowing that your cloud infrastructure is secure, allowing you to focus on your core business objectives."
+                    explain: "Rest assured knowing your mobile applications are thoroughly tested and secure, allowing you to focus on delivering a seamless user experience."
                 },
             ]
         },
-        getInTouch: "At ArmourIQ, we specialise in safeguarding your digital assets through meticulous security audits tailored to your cloud environment. Our team of cybersecurity experts meticulously assesses your configurations to ensure they align with industry best practices and compliance standards. From access controls to data encryption, we leave no stone unturned in fortifying your cloud security posture.",
+        extra: [
+            {
+                head: "Mobile Application Penetration Test",
+                content: "Ensure the security of your mobile applications with ArmourIQ's Mobile Application Penetration Testing service. Our expert team rigorously assesses your mobile apps for vulnerabilities, providing actionable insights to strengthen their security and protect user data."
+            },
+            {
+                head: "Source Code Review",
+                content: "ArmourIQ offers comprehensive Source Code Review services to identify and remediate security weaknesses in your mobile applications' source code. Our detailed analysis helps mitigate risks and ensure your apps meet the highest security standards."
+            },
+        ],
+        getInTouch: "Protect your mobile applications with ArmourIQ's Mobile Security services. Contact us today to schedule a consultation and discover how we can secure your mobile apps against emerging threats.",
 
-        getStarted : "Protect your cloud environment with ArmourIQ's Cloud Security Configuration Audit. Contact us today to schedule a consultation and take the first step towards a more secure future."
-    },
-
+        getStarted : "Protect your mobile applications with ArmourIQ's Mobile Security services. Contact us today to schedule a consultation and discover how we can secure your mobile apps against emerging threats.",
+        faq: [
+            {
+              question: "What is a Configuration Audit, and why is it important for cloud environments?",
+              answer: "A configuration audit is a comprehensive review of your cloud environment's settings to ensure they align with security best practices. This helps identify and mitigate vulnerabilities that could expose your organization to cyber threats."
+            },
+            {
+              question: "Can ArmourIQ audit SaaS products in addition to major cloud providers?",
+              answer: "Yes, ArmourIQ offers configuration audits for various SaaS products, ensuring they meet your organization's security and compliance requirements."
+            }
+          ]
+  },
     mobile: {
         topic: "Mobile Security Services",
         image: "/Mobile.jpg",
@@ -116,7 +147,17 @@ export const services = {
         ],
         getInTouch: "Protect your mobile applications with ArmourIQ's Mobile Security services. Contact us today to schedule a consultation and discover how we can secure your mobile apps against emerging threats.",
 
-        getStarted : "Protect your mobile applications with ArmourIQ's Mobile Security services. Contact us today to schedule a consultation and discover how we can secure your mobile apps against emerging threats."
+        getStarted : "Protect your mobile applications with ArmourIQ's Mobile Security services. Contact us today to schedule a consultation and discover how we can secure your mobile apps against emerging threats.",
+        faq: [
+            {
+              question: "What is a Mobile Application Penetration Test?",
+              answer: "A penetration test simulates real-world attacks on your mobile apps to identify vulnerabilities and assess their security posture."
+            },
+            {
+              question: "Why is Source Code Review crucial for mobile applications?",
+              answer: "Source code review helps identify security flaws, coding errors, and backdoors within your mobile application's code, ensuring proactive protection."
+            }
+          ]
     },
 
     application: {
@@ -189,7 +230,21 @@ export const services = {
                 content: "ArmourIQ conducts Secure Software Development Lifecycle Reviews to assess your development processes. We provide guidance to integrate security best practices throughout your SDLC, minimizing risks from the early stages of application development."
             },
         ],
-        getStarted: "Secure your applications with ArmourIQ's Application Security services. Contact us today to schedule a consultation and discover how we can strengthen your application security strategy."
+        getStarted: "Secure your applications with ArmourIQ's Application Security services. Contact us today to schedule a consultation and discover how we can strengthen your application security strategy.",
+        faq: [
+            {
+              question: "What does ArmourIQ's Application Security Testing involve?",
+              answer: "Our application security testing includes both automated and manual assessments to identify vulnerabilities in your web applications and APIs."
+            },
+            {
+              question: "What is an Application Security Architecture Review?",
+              answer: "This review evaluates your application's design and architecture to identify potential security weaknesses and ensure it's built with security in mind."
+            },
+            {
+              question: "How does ArmourIQ support a Secure Software Development Lifecycle (SDLC)?",
+              answer: "ArmourIQ integrates security best practices into your SDLC, providing guidance and support throughout the development process."
+            }
+          ]
     },
 
     audit: {
@@ -286,7 +341,21 @@ export const services = {
                 content: "Secure your mergers and acquisitions with ArmourIQ's Cyber Security Assessments. We assess the cybersecurity risks associated with M&A activities to protect your organization's assets and continuity."
             }
         ],
-        getStarted: "Secure your network with ArmourIQ's Audit & Compliance services. Contact us today to schedule a consultation and discover how we can strengthen your security and compliance posture."
+        getStarted: "Secure your network with ArmourIQ's Audit & Compliance services. Contact us today to schedule a consultation and discover how we can strengthen your security and compliance posture.",
+        faq: [
+            {
+              question: "What is the scope of an Information Security Audit?",
+              answer: "Our audit assesses your organization's information security practices against industry standards and regulations to identify gaps and areas for improvement."
+            },
+            {
+              question: "How does ArmourIQ assist with ISO 27001 Implementation and Sustenance?",
+              answer: "We provide comprehensive support for achieving and maintaining ISO 27001 certification, including gap analysis, policy development, and ongoing compliance monitoring."
+            },
+            {
+                question: "What is a Cyber Security Assessment for Mergers & Acquisitions (M&A)?",
+                answer: "This assessment evaluates the security posture of both organizations involved in a merger or acquisition to identify potential risks and ensure a smooth transition."
+              }
+          ]
     },
 
     awareness: {
@@ -329,7 +398,17 @@ export const services = {
                 }
             ]
         },
-        getStarted: "Empower your workforce with ArmourIQ’s Security Awareness Program. Contact us today to implement training that strengthens your organization’s defense against cyber threats and promotes a proactive security culture."
+        getStarted: "Empower your workforce with ArmourIQ’s Security Awareness Program. Contact us today to implement training that strengthens your organization’s defense against cyber threats and promotes a proactive security culture.",
+        faq: [
+            {
+              question: "Can you provide cybersecurity staff augmentation?",
+              answer: "Yes, we can provide experienced cybersecurity professionals to supplement your internal team."
+            },
+            {
+              question: "What types of security awareness training do you offer?",
+              answer: "We offer a range of training programs, including phishing simulations, employee education, and awareness campaigns."
+            }
+          ]
     },
 
     maturity: {
@@ -398,7 +477,17 @@ export const services = {
                 content: "Continuously monitor and assess the effectiveness of your security measures. Make necessary adjustments to maintain robust and adaptive security practices."
             }
         ],
-        getStarted: "Protect your organization with ArmourIQ’s Maturity Assessment services. Contact us today to schedule an evaluation and take the first step towards achieving industry-leading security standards."
+        getStarted: "Protect your organization with ArmourIQ’s Maturity Assessment services. Contact us today to schedule an evaluation and take the first step towards achieving industry-leading security standards.",
+        faq: [
+            {
+              question: "What is the purpose of a Maturity Assessment?",
+              answer: "A maturity assessment evaluates your organization's cybersecurity maturity level and identifies areas for improvement."
+            },
+            {
+              question: "What does Virtual CISO as a Service involve?",
+              answer: "Our virtual CISO provides expert cybersecurity guidance and support, helping you develop and implement effective security strategies."
+            }
+          ]
     },
 
     network: {
@@ -471,7 +560,21 @@ export const services = {
                 content: "ArmourIQ offers detailed Firewall Rule Review services to evaluate and optimize your firewall configurations. We verify rule effectiveness, eliminate unnecessary rules, and strengthen your firewall's ability to defend against threats."
             }
         ],
-        getStarted: "Secure your network with ArmourIQ's Network Security services. Contact us today to schedule a consultation and discover how we can enhance your network security strategy."
+        getStarted: "Secure your network with ArmourIQ's Network Security services. Contact us today to schedule a consultation and discover how we can enhance your network security strategy.",
+        faq: [
+            {
+              question: "What is the difference between a Network Vulnerability Assessment and Network Penetration Testing?",
+              answer: "A vulnerability assessment identifies potential weaknesses in your network, while penetration testing simulates attacks to assess the effectiveness of your security controls."
+            },
+            {
+              question: "What is involved in a Network Architecture Security Review?",
+              answer: "This review examines your network's design and configuration to identify potential security risks and provide recommendations for improvement."
+            },
+            {
+              question: "How does ArmourIQ conduct Wireless Penetration Testing?",
+              answer: "We assess your wireless networks for vulnerabilities that could be exploited by attackers, such as weak encryption or unauthorized access points."
+            }
+          ]
     },
 
     soc: {
@@ -540,42 +643,66 @@ export const services = {
                 content: "Test and improve your incident response plans with ArmourIQ’s Tabletop Exercises. Our simulated scenarios prepare your team to handle actual cyber incidents with confidence."
             }
         ],
-        getStarted: "Protect your organization with ArmourIQ’s SOC & Global Threat Management Services. Contact us today to schedule a consultation and discover how we can help you stay ahead of cyber threats and ensure robust security."
+        getStarted: "Protect your organization with ArmourIQ’s SOC & Global Threat Management Services. Contact us today to schedule a consultation and discover how we can help you stay ahead of cyber threats and ensure robust security.",
+        faq: [
+            {
+              question: "What is SOC as a Service?",
+              answer: "SOC as a Service provides managed security operations center capabilities, including threat monitoring, incident response, and compliance management."
+            },
+            {
+              question: "What services are included in Digital Forensics & Security Incident Response?",
+              answer: "Our services include investigating security incidents, recovering data, and providing expert analysis to prevent future occurrences."
+            },
+            {
+              question: "What is a Tabletop Exercise in the context of Security Advisory Services?",
+              answer: "A tabletop exercise is a simulated security incident that helps organizations practice their response capabilities and identify areas for improvement."
+            }
+          ]
     },
 
-    // staff: {
-    //     topic: "Staff Augmentation",
-    //     image: "/Staff.jpg",
-    //     heading1: "Flexible Workforce Augmentation",
-    //     heading2: "Empowering Your Projects with Skilled Professionals",
-    //     content: "ArmourIQ offers specialized Staff Augmentation services to bolster your capabilities with skilled professionals who integrate seamlessly into your team. Whether you need temporary support or long-term expertise, our augmentation services provide flexible security needs.",
-    //     approaches: {
-    //         head: "How We Can Help You",
-    //         data: [
-    //             {
-    //                 approachHead: "Flexible Resource Allocation",
-    //                 content: "Access cybersecurity professionals on-demand to fill temporary gaps or augment your existing team during peak periods."
-    //             },
-    //             {
-    //                 approachHead: "Specialized Expertise",
-    //                 content: "Benefit from our pool of experienced professionals skilled in various cybersecurity domains, including risk management, incident response, and compliance."
-    //             },
-    //             {
-    //                 approachHead: "Seamless Integration",
-    //                 content: "Ensure smooth integration of augmented staff into your organizational structure and processes, enhancing collaboration and productivity."
-    //             },
-    //             {
-    //                 approachHead: "Scalability",
-    //                 content: "Scale your cybersecurity operations effectively by adjusting the level of augmentation as your business needs evolve."
-    //             },
-    //             {
-    //                 approachHead: "Cost Efficiency",
-    //                 content: "Optimize costs with flexible staffing solutions that eliminate the overhead associated with permanent hires while maintaining high-quality expertise."
-    //             }
-    //         ]
-    //     },
-    //     getStarted: "Enhance your cybersecurity capabilities with ArmourIQ’s Staff Augmentation services. Contact us today to discuss your staffing needs and leverage our expertise effectively."
-    // },
+    staff: {
+        topic: "Staff Augmentation",
+        image: "/Staff.jpg",
+        heading1: "Flexible Workforce Augmentation",
+        heading2: "Empowering Your Projects with Skilled Professionals",
+        content: "ArmourIQ offers specialized Staff Augmentation services to bolster your capabilities with skilled professionals who integrate seamlessly into your team. Whether you need temporary support or long-term expertise, our augmentation services provide flexible security needs.",
+        approaches: {
+            head: "How We Can Help You",
+            data: [
+                {
+                    approachHead: "Flexible Resource Allocation",
+                    content: "Access cybersecurity professionals on-demand to fill temporary gaps or augment your existing team during peak periods."
+                },
+                {
+                    approachHead: "Specialized Expertise",
+                    content: "Benefit from our pool of experienced professionals skilled in various cybersecurity domains, including risk management, incident response, and compliance."
+                },
+                {
+                    approachHead: "Seamless Integration",
+                    content: "Ensure smooth integration of augmented staff into your organizational structure and processes, enhancing collaboration and productivity."
+                },
+                {
+                    approachHead: "Scalability",
+                    content: "Scale your cybersecurity operations effectively by adjusting the level of augmentation as your business needs evolve."
+                },
+                {
+                    approachHead: "Cost Efficiency",
+                    content: "Optimize costs with flexible staffing solutions that eliminate the overhead associated with permanent hires while maintaining high-quality expertise."
+                }
+            ]
+        },
+        getStarted: "Enhance your cybersecurity capabilities with ArmourIQ’s Staff Augmentation services. Contact us today to discuss your staffing needs and leverage our expertise effectively.",
+        faq: [
+            {
+              question: "Can you provide cybersecurity staff augmentation?",
+              answer: "Yes, we can provide experienced cybersecurity professionals to supplement your internal team."
+            },
+            {
+              question: "What types of security awareness training do you offer?",
+              answer: "We offer a range of training programs, including phishing simulations, employee education, and awareness campaigns."
+            }
+          ]
+    },
 
     virtual: {
         topic: "Virtual CISO as a Service",
