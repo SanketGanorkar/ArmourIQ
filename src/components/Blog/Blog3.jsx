@@ -3,8 +3,8 @@ import Footer from "../Footer.jsx";
 
 const Blog3 = () => {
   return (
-    <div className="bg-white">
-      <div className="flex flex-col mt-3 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white flex flex-col items-center">
+      <div className="res-width flex flex-col mt-3 px-4 sm:px-6 lg:px-8">
         <div className="relative w-full">
           <div className="bg-abbg bg-cover bg-center w-full h-[240px] opacity-40"></div>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -35,7 +35,7 @@ const Blog3 = () => {
             and vulnerabilities in an organization's IT infrastructure.
           </p>
           <p className="text-black font-normal text-base sm:text-xl mb-4">
-            Key terms such as <span className="font-bold">vulnerability</span>, 
+            Key terms such as <span className="font-bold">vulnerability</span>,
             <span className="font-bold">threat</span>, and <span className="font-bold">risk</span> will be used
             throughout this post. A <span className="font-bold">vulnerability</span> is a weakness
             in a system that could be exploited, a <span className="font-bold">threat</span> is
@@ -70,22 +70,22 @@ const Blog3 = () => {
             className="w-full sm:w-[650px] lg:w-[800px] mx-auto rounded-3xl mt-8"
           />
           <p className="text-black font-normal text-base sm:text-xl mb-4 mt-5">
-            For instance, a financial institution might identify that its customer database is vulnerable to SQL 
-            injection attacks. The technical risk assessment would involve testing the database for such vulnerabilities 
-            and implementing security measures such as input validation and parameterized queries to prevent attacks. 
-            Regularly update your risk assessment processes to include new threats and vulnerabilities. Use automated 
+            For instance, a financial institution might identify that its customer database is vulnerable to SQL
+            injection attacks. The technical risk assessment would involve testing the database for such vulnerabilities
+            and implementing security measures such as input validation and parameterized queries to prevent attacks.
+            Regularly update your risk assessment processes to include new threats and vulnerabilities. Use automated
             tools for continuous monitoring and assessment.
           </p>
           <p className="text-black font-normal text-base sm:text-xl mb-4 mt-5">
-            A large healthcare provider conducted a Technical Risk Assessment and identified that their patient management 
-            system was vulnerable to unauthorized access. By implementing stronger authentication measures and regular 
+            A large healthcare provider conducted a Technical Risk Assessment and identified that their patient management
+            system was vulnerable to unauthorized access. By implementing stronger authentication measures and regular
             system audits, they reduced the risk of data breaches significantly.
           </p>
           <p className="text-black font-normal text-base sm:text-xl mb-4 mt-5">
-            The healthcare provider reported a 60% reduction in security incidents related to unauthorized access. Continuous 
-            monitoring and regular updates to security protocols are essential to adapt to evolving threats. Technical Risk 
-            Assessments are a fundamental aspect of a robust cybersecurity strategy. They help in identifying potential threats, 
-            evaluating risks, and implementing measures to protect digital assets. Key actions include regular risk assessments, 
+            The healthcare provider reported a 60% reduction in security incidents related to unauthorized access. Continuous
+            monitoring and regular updates to security protocols are essential to adapt to evolving threats. Technical Risk
+            Assessments are a fundamental aspect of a robust cybersecurity strategy. They help in identifying potential threats,
+            evaluating risks, and implementing measures to protect digital assets. Key actions include regular risk assessments,
             continuous monitoring, and proactive risk mitigation strategies.
           </p>
           <p className="text-black font-normal text-base sm:text-xl mb-4 mt-5">

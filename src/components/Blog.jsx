@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FaRegCommentAlt } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   const arr = [
@@ -48,28 +49,44 @@ const Blog = () => {
       slidesToSlide: 1,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 675 },
       items: 2,
       slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 675, min: 0 },
       items: 1,
       slidesToSlide: 1,
     },
   };
 
   return (
-    <div className="bg-white flex flex-col items-center" id="blog">
-      <h4 className="text-[#004AAD] font-bold mt-[65px] text-nowrap">
+    <div className="z-10 bg-white flex flex-col items-center blog-width" id="blog">
+      <motion.h4
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.5 }}
+        className="text-[#004AAD] font-bold pt-[85px] text-nowrap">
         BLOG & NEWS
-      </h4>
-      <h2 className="text-black font-bold text-3xl">Latest News</h2>
-      <p className="text-black mt-3 text-center max-w-xl">
+      </motion.h4>
+      <motion.h2
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.5 }}
+        className="text-black font-bold text-3xl">Latest News</motion.h2>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.5 }}
+        className="text-black mt-3 text-center max-w-xl">
         Stay updated with the latest cybersecurity trends, news, and expert
         insights to keep your business secure.
-      </p>
-      <div className="w-full max-w-7xl mx-auto mt-8">
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }}
+        className="w-full mx-auto mt-8">
         <Carousel
           swipeable
           draggable
@@ -83,41 +100,44 @@ const Blog = () => {
           transitionDuration={500}
           containerClass="carousel-container"
           removeArrowOnDeviceType={[]}
-          itemClass="md:px-5 mx-auto max-sm:ml-2 max-sm:px-1"
         >
           {arr.map((item) => (
             <div
               key={item.id}
-              className="border-[#004bae] border-[1px] my-4 mx-2 w-[320px] flex flex-col items-center bg-white rounded-lg shadow-lg "
+              className=""
             >
-              <Link to={item.path}>
-                <img
-                  src={item.img}
-                  className="w-full h-[200px] object-cover rounded-sm transition-all 300 hover:scale-95"
-                />
-              </Link>
-              <div className="p-4 flex flex-col items-start w-full">
-                <Link to={item.path}>
-                  <h2 className="text-black text-xl font-bold">{item.title}</h2>
-                </Link>
-                <div className="flex items-center mt-2 text-black">
-                  <div className="text-black font-normal">{item.date}</div>
-                  <div className="flex items-center ml-auto">
-                    <FaRegCommentAlt className="mr-2 mt-1 ml-[100px]" />
-                    <div className="mr-4">{item.comments}</div>
+              <div className="flex justify-center items-center my-4 mx-2">
+                <div className="blog-card w-[23rem] md:w-[25rem] h-[33rem] border-[#004bae] border-[1px] flex flex-col items-center bg-white rounded-lg shadow-lg">
+                  <Link to={item.path} className="overflow-hidden">
+                    <img
+                      src={item.img}
+                      className="blog-img w-full object-cover rounded-sm transition-all 300"
+                    />
+                  </Link>
+                  <div className="p-4 flex flex-col items-start w-full">
+                    <Link to={item.path}>
+                      <h2 className="text-black text-xl font-bold">{item.title}</h2>
+                    </Link>
+                    <div className="flex items-center mt-2 text-black">
+                      <div className="text-black font-normal">{item.date}</div>
+                      <div className="flex items-center ml-auto">
+                        <FaRegCommentAlt className="mr-2 mt-1 ml-[100px]" />
+                        <div className="mr-4">{item.comments}</div>
+                      </div>
+                    </div>
+                    <p className="text-black mt-2">{item.desc}</p>
+                    <Link to={item.path}>
+                      <h2 className="mt-3 text-black font-bold cursor-pointer hover:text-[#004AAD]">
+                        READ MORE
+                      </h2>
+                    </Link>
                   </div>
                 </div>
-                <p className="text-black mt-2">{item.desc}</p>
-                <Link to={item.path}>
-                  <h2 className="mt-3 text-black font-bold cursor-pointer hover:text-[#004AAD]">
-                    READ MORE
-                  </h2>
-                </Link>
               </div>
             </div>
           ))}
         </Carousel>
-      </div>
+      </motion.div>
     </div>
   );
 };

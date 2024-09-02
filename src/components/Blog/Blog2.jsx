@@ -3,8 +3,8 @@ import Footer from "../Footer.jsx";
 
 const Blog2 = () => {
   return (
-    <div className="bg-white">
-      <div className="flex flex-col mt-3 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white flex flex-col items-center">
+      <div className="res-width flex flex-col mt-3">
         <div className="relative w-full">
           <div className="bg-abbg bg-cover bg-center w-full h-[240px] opacity-40"></div>
           <div className="absolute inset-0 flex items-center justify-center">

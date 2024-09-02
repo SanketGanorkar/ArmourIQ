@@ -4,7 +4,7 @@ import { MdOutlineEmail } from "react-icons/md";
 const ContactD = () => {
   return (
     <div>
-      <div className="mt-[20px] sm:ml-5 flex flex-row max-sm:mt-[20px] max-md:flex-col gap-4">
+      <div className="flex flex-row max-sm:mt-[20px] max-md:flex-col gap-8">
         <div className="flex flex-col">
           <div className="flex flex-row ">
             <FaPhone color="#004bae" className="ml-4 mt-4" size={26} />
@@ -23,7 +23,7 @@ const ContactD = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col text-black xl:ml-[95px] md:w-[480px]">
+        <div className="flex flex-col text-black md:w-[480px]">
           <input
             type="text"
             placeholder="Name"

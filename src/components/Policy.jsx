@@ -2,8 +2,8 @@ import Footer from "./Footer";
 
 const Policies = () => {
   return (
-    <div className="bg-white">
-      <div className="flex flex-col mt-3 px-4 md:px-8 lg:px-16">
+    <div className="bg-white flex  flex-col items-center">
+      <div className="res-width flex flex-col mt-3">
         <h1 className="text-[24px] md:text-[32px] lg:text-[40px] mt-[90px] text-black font-semibold">
           Privacy Policy
         </h1>
