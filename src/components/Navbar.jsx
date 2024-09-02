@@ -11,118 +11,84 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-10 flex flex-row bg-white h-[98px] items-center px-4">
-        <img
-          src={logo2}
-          alt="Company Logo"
-          className="h-[130px] ml-0 mr-auto sm:ml-0 cursor-pointer"
-          onClick={() => navigate("/")}
-        />
-        <ul className="flex flex-row max-sm:hidden items-center text-black list-none ml-auto font-[Roboto]">
-          <li
-            className="mr-6 mb-3 text-[20px] font-medium cursor-pointer"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            <a href="#home">Home</a>
-          </li>
-          <li
-            className="mr-6 mb-3 text-[20px] font-medium cursor-pointer"
-            onClick={() => navigate("/about")}
-          >
-            About Us
-          </li>
-          <li
-            className="relative group mr-4 mb-3 text-[20px] font-medium cursor-pointer"
-            onClick={() => navigate("/services")}
-          >
-            Services
-          </li>
-          <li
-            className="relative group mr-6 mb-3 text-[20px] font-medium cursor-pointer"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            <a href="#blog">Blog</a>
-          </li>
-          <li
-            className="mr-6 mb-3 text-[20px] font-medium cursor-pointer"
-            onClick={() => {
-              navigate("/contact");
-            }}
-          >
-            Contact
-          </li>
-        </ul>
-        <IoMdMenu
-          color="black"
-          size={25}
-          className="mr-3 mb-2 block sm:hidden max-sm:h-8 max-sm:w-8 cursor-pointer"
-          onClick={() => setVisibleMenu(true)}
-        />
-      </div>
-      {visibleMenu && (
-        <div className="fixed top-0 left-0 h-screen w-screen bg-black transition z-20">
-          <RxCross2
-            color="white"
-            size={25}
-            className="absolute top-4 right-4 max-sm:h-8 max-sm:w-8 cursor-pointer"
-            onClick={() => setVisibleMenu(false)}
-          />
-          <ul className="text-white absolute top-14 right-10 text-right text-2xl flex flex-col gap-4">
-            <li
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0, y: -70 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeInOut", duration: 0.7 }}
+          className="fixed top-0 left-0 right-0 nav flex bg-white h-[78px] justify-center drop-shadow-md">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeInOut", duration: 0.6, delay: 0.7 }}
+            className="relative nav-width flex items-center justify-between">
+            <img
+              src={logo2}
+              alt="Company Logo"
+              className="cursor-pointer h-[8rem]"
               onClick={() => {
-                navigate("/");
-                setVisibleMenu(false);
+                setVisibleMenu(false)
+                navigate("/")
               }}
-            >
-              <a href="#home">HOME</a>
-            </li>
-            <li
-              onClick={() => {
-                navigate("/about");
-                setVisibleMenu(false);
-              }}
-            >
-              ABOUT US
-            </li>
-            <li
-              onClick={() => {
-                navigate("/services");
-                setVisibleMenu(false);
-              }}
-            >
-              SERVICES
-            </li>
-            <li
-              onClick={() => {
-                navigate("/");
-                setVisibleMenu(false);
-              }}
-            >
-              <a href="#team">TEAM</a>
-            </li>
-            <li
-              onClick={() => {
-                navigate("/");
-                setVisibleMenu(false);
-              }}
-            >
-              <a href="#blog">BLOG</a>
-            </li>
-            <li
-              onClick={() => {
-                navigate("/contact");
-                setVisibleMenu(false);
-              }}
-            >
-              <a href="#contact">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-      )}
+            />
+            <ul className={`max-md:absolute max-md:transition ${visibleMenu ? "max-md:translate-x-0" : "max-md:translate-x-[21rem]"} -right-[1.1rem] top-[4.5rem] max-md:w-[20rem] max-md:pb-8 flex max-md:flex-col bg-white gap-10 items-end pr-6  md:items-center text-black list-none ml-auto font-[Roboto]`}>
+              <li
+                className="text-[20px] font-medium cursor-pointer"
+                onClick={() => {
+                  setVisibleMenu(false)
+                  navigate("/");
+                }}
+              >
+                <a href="#home">Home</a>
+              </li>
+              <li
+                className="text-[20px] font-medium cursor-pointer text-nowrap"
+                onClick={() => {
+                  setVisibleMenu(false)
+                  navigate("/about")
+                }}
+              >
+                About Us
+              </li>
+              <li
+                className="relative group text-[20px] font-medium cursor-pointer"
+                onClick={() => {
+                  setVisibleMenu(false)
+                  navigate("/services")
+                }}
+              >
+                Services
+              </li>
+              <li
+                className="relative group text-[20px] font-medium cursor-pointer"
+                onClick={() => {
+                  setVisibleMenu(false)
+                  navigate("/");
+                }}
+              >
+                <a href="#blog">Blogs</a>
+              </li>
+              <li
+                className="text-[20px] font-medium cursor-pointer"
+                onClick={() => {
+                  setVisibleMenu(false)
+                  navigate("/contact");
+                }}
+              >
+                Contact
+              </li>
+            </ul>
+            <div className="md:hidden" onClick={() => setVisibleMenu(!visibleMenu)}>
+              {
+                visibleMenu ?
+                  <RxCross2 size={28} />
+                  :
+                  <IoMdMenu size={28} />
+              }
+            </div>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };

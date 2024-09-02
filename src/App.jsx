@@ -1,38 +1,85 @@
+import Loading from "./components/Loading.jsx";
 import "./App.css";
-import Navbar from "./components/Navbar.jsx";
-import Services from "./components/Services.jsx";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AboutUs from "./components/AboutUs.jsx";
-import LandingPage from "./components/LandingPage.jsx";
-import Blog1 from "./components/Blog/Blog1.jsx";
-import Blog2 from "./components/Blog/Blog2.jsx";
-import Blog3 from "./components/Blog/Blog3.jsx";
-import Blog4 from "./components/Blog/Blog4.jsx";
-import Contact from "./components/Contact.jsx";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Scroll from "./components/Scroll.jsx";
-import Policy from "./components/Policy.jsx";
-import Terms from "./components/Terms.jsx";
-import Service from "./components/Services/Service.jsx";
+const Navbar = lazy(() => import("./components/Navbar.jsx"));
+const Services = lazy(() => import("./components/Services.jsx"));
+const AboutUs = lazy(() => import("./components/AboutUs.jsx"));
+const LandingPage = lazy(() => import("./components/LandingPage.jsx"));
+const Blog1 = lazy(() => import("./components/Blog/Blog1.jsx"));
+const Blog2 = lazy(() => import("./components/Blog/Blog2.jsx"));
+const Blog3 = lazy(() => import("./components/Blog/Blog3.jsx"));
+const Blog4 = lazy(() => import("./components/Blog/Blog4.jsx"));
+const Contact = lazy(() => import("./components/Contact.jsx"));
+const Policy = lazy(() => import("./components/Policy.jsx"));
+const Terms = lazy(() => import("./components/Terms.jsx"));
+const Service = lazy(() => import("./components/Services/Service.jsx"));
+
 function App() {
   return (
     <>
       <BrowserRouter>
         <Scroll />
-        <Navbar />
+        <Suspense fallback={<></>}>
+          <Navbar />
+        </Suspense>
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route exact path="/services" element={<Services />} />
-          <Route exact path="/contact" element={<Contact />} />
-          <Route exact path="/about" element={<AboutUs />} />
-          <Route exact path="/services/:param" element={<Service />} />
-          <Route exact path="/terms-and-conditions" element={<Terms />} />
-          <Route exact path="/privacy-policy" element={<Policy />} />
-          <Route exact path="/blog1" element={<Blog1 />} />
-          <Route exact path="/blog2" element={<Blog2 />} />
-          <Route exact path="/blog3" element={<Blog3 />} />
-          <Route exact path="/blog4" element={<Blog4 />} />
+          <Route exact path="/" element={
+            <Suspense fallback={<Loading />}>
+              <LandingPage />
+            </Suspense>
+          } />
+          <Route exact path="/services" element={
+            <Suspense fallback={<Loading />}>
+              <Services />
+            </Suspense>
+          } />
+          <Route exact path="/contact" element={
+            <Suspense fallback={<Loading />}>
+              <Contact />
+            </Suspense>
+          } />
+          <Route exact path="/about" element={
+            <Suspense fallback={<Loading />}>
+              <AboutUs />
+            </Suspense>
+          } />
+          <Route exact path="/services/:param" element={
+            <Suspense fallback={<Loading />}>
+              <Service />
+            </Suspense>
+          } />
+          <Route exact path="/terms-and-conditions" element={
+            <Suspense fallback={<Loading />}>
+              <Terms />
+            </Suspense>
+          } />
+          <Route exact path="/privacy-policy" element={
+            <Suspense fallback={<Loading />}>
+              <Policy />
+            </Suspense>
+          } />
+          <Route exact path="/blog1" element={
+            <Suspense fallback={<Loading />}>
+              <Blog1 />
+            </Suspense>
+          } />
+          <Route exact path="/blog2" element={
+            <Suspense fallback={<Loading />}>
+              <Blog2 />
+            </Suspense>
+          } />
+          <Route exact path="/blog3" element={
+            <Suspense fallback={<Loading />}>
+              <Blog3 />
+            </Suspense>
+          } />
+          <Route exact path="/blog4" element={
+            <Suspense fallback={<Loading />}>
+              <Blog4 />
+            </Suspense>
+          } />
         </Routes>
       </BrowserRouter>
     </>

@@ -1,5 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import user from "/assets/User.png";
+import { motion } from "framer-motion";
+
 const Testimonials = () => {
   const arr = [
     {
@@ -24,26 +26,34 @@ const Testimonials = () => {
       desig: "Founder & CEO",
     },
   ];
+
   return (
-    <div className="flex bg-white lg:justify-center">
-      <div className="flex flex-col px-4 max-lg:w-screen">
-        <div className="flex flex-row text-black max-sm:flex-col">
+    <div className="res-width flex bg-white">
+      <div className="flex flex-col w-full itemscenter">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.5 }}
+          className="flex flex-row text-black max-sm:flex-col items-end gap-14 my-6 mt-20">
           <div>
-            <h5 className="font-bold text-[#004bae] mt-12">TESTIMONIALS</h5>
-            <h2 className="font-bold text-3xl mt-3">
+            <h5 className="font-bold text-[#004bae]">TESTIMONIALS</h5>
+            <h2 className="font-bold text-3xl">
               What clients say about us
             </h2>
           </div>
           <div>
-            <button className="bg-[#004AAD] w-[8rem] text-white p-2 font-bold mt-4 sm:mt-[105px] md:ml-[5rem] lg:ml-[290px] cursor-pointer">
+            <button className="bg-[#004AAD] w-[8rem] text-white p-2 font-bold cursor-pointer">
               SEE MORE
             </button>
           </div>
-        </div>
+        </motion.div>
         <div className="max-lg:overflow-x-scroll">
           <div className="flex flex-row gap-2 md:gap-4 xl:gap-12 max-lg:w-[65rem] max-md:overflow-x-scroll">
             {arr.map((item) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ ease: "easeInOut", duration: 0.5 }}
                 key={item.id}
                 className="bg-[#F6F5F5] mb-9 border-[2px] w-[342px] h-[250px] mt-6 md:mt-12 pl-6 pr-3"
               >
@@ -62,7 +72,7 @@ const Testimonials = () => {
                     <h6 className="text-black text-[14px]">{item.desig}</h6>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
