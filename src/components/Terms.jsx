@@ -4,11 +4,11 @@ const Terms = () => {
   return (
     <div className="bg-white flex flex-col items-center">
       <div className="flex flex-col mt-3 res-width">
-        <h1 className="text-[24px] md:text-[32px] lg:text-[40px] mt-[90px] text-black font-semibold">
+        <h1 className="text-[24px] md:text-[32px] mt-[90px] text-black font-semibold">
           Terms And Conditions
         </h1>
         <div className="mb-10">
-          <h1 className="text-[20px] md:text-[26px] lg:text-[30px] mt-[40px] text-black">
+          <h1 className="text-[1.2rem] md:text-[1.5rem] mt-[40px] text-black">
             Responsibilities Of The Client And General Work Terms:
           </h1>
           <ol className="list-disc text-black font-normal text-base md:text-lg lg:text-xl ml-5 md:ml-10 lg:ml-12 mt-5">
@@ -30,7 +30,7 @@ const Terms = () => {
               otherwise agreed upon.
             </li>
           </ol>
-          <h1 className="text-[20px] md:text-[26px] lg:text-[30px] mt-[40px] text-black">
+          <h1 className="text-[1.2rem] md:text-[1.5rem] mt-[40px] text-black">
             Data We Collect Includes:
           </h1>
           <ol className="list-disc text-black font-normal text-base md:text-lg lg:text-xl ml-5 md:ml-10 lg:ml-12 mt-5">

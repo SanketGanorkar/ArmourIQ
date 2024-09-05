@@ -6,23 +6,23 @@ const Team = () => {
 
   return (
     <div className="res-width bg-white flex flex-col items-center mt-24" id="team">
-      <h2 className="text-black text-4xl font-semibold text-center">
+      <h2 className="text-black text-4xl font-semibold text-center mb-6">
         Our Team
       </h2>
       <div className="flex flex-col mt-5 w-full lg:px-0">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-center lg:space-x-4">
+        <div className="relative flex max-[1170px]:flex-col gap-6 lg:items-start lg:justify-center lg:space-x-4">
           <motion.img
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             src={team2}
-            className="h-[250px] lg:h-[325px] w-full z-30 lg:w-[405px] object-cover rounded-xl mb-4 lg:mb-0"
+            className="h-[350px] lg:h-auto z-30 max-[1160px]:w-full w-[40rem] xl:w-[50rem] object-cover rounded-xl mb-4 lg:mb-0"
           />
           <motion.div
             initial={{ opacity: 0, x: -70 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
-            className="flex flex-col lg:text-left md:ml-0">
+            className="flex flex-col h- justify-center lg:text-left md:ml-0">
             <p className="text-black text-pretty lg:text-lg mr-2 ">
               At ArmourIQ, we are dedicated to democratizing cybersecurity,
               ensuring that businesses of all sizes can defend against digital
@@ -40,13 +40,13 @@ const Team = () => {
               affordable.
             </p>
             <br />
-            <p className="text-black text-pretty lg:text-lg mr-3">
+            {/* <p className="text-black text-pretty lg:text-lg mr-3">
               Our dedication to transparency fosters trust and long-lasting
               partnerships built on mutual success. We believe that informed
               clients are empowered clients, which is why we maintain open
               communication and provide clear insights into our processes and
               strategies.
-            </p>
+            </p> */}
           </motion.div>
         </div>
         <div className="flex flex-col lg:flex-row-reverse lg:items-start lg:justify-between lg:space-x-reverse lg:space-x-4 mt-8 lg:mt-16">
@@ -55,7 +55,7 @@ const Team = () => {
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             src={team1}
-            className="h-[250px] lg:h-[325px] w-full z-30 lg:w-[405px] object-cover rounded-xl mb-4 lg:mb-0"
+            className="h-[250px] lg:h-[400px] w-full z-30 lg:w-[805px] object-contain rounded-xl mb-4 lg:mb-0"
           />
           <motion.div
             initial={{ opacity: 0, x: 70 }}
@@ -70,7 +70,7 @@ const Team = () => {
               robust protection against both current and emerging cyber threats.
             </p>
             <br />
-            <p className="text-black text-pretty lg:text-lg">
+            {/* <p className="text-black text-pretty lg:text-lg">
               We understand that every business is unique, which is why we take
               a customized approach to each project. Our experts work closely
               with you to understand your specific needs and challenges,
@@ -87,7 +87,7 @@ const Team = () => {
               industry leaders. Contact us today to learn more about our
               tailored cybersecurity services and discover how ArmourIQ can be
               your trusted partner in safeguarding your digital future.
-            </p>
+            </p> */}
           </motion.div>
         </div>
       </div>

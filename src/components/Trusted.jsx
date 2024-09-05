@@ -12,12 +12,12 @@ import Marquee from "react-fast-marquee";
 const Trusted = () => {
   return (
     <div className="bg-white flex flex-col min-h-[300px] res-width justify-center mt-12">
-      <div className="flex flex-col text-black w-full sm:items-center">
+      <div className="flex text-black w-full max-[890px]:gap-0 gap-4 max-[890px]:flex-col">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.5 }}
-          className="font-bold text-3xl py-4 lg:py-0 lg:mb-6 w-[30rem] text-center max-sm:text-left">
+          className="font-bold text-3xl py-4 lg:py-0 lg:mb-6 w-full sm:w-[30rem] max-sm:text-left">
           Our Customers Trust Us
           for Our Transparency
           and Reliability
@@ -26,7 +26,7 @@ const Trusted = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.5 }}
-          className="block lg:block text-center max-sm:text-left w-[90%] lg:w-[50rem]">
+          className="block lg:block max-sm:text-left max-[890px]:w-[95%] w-[80%] lg:w-[50rem] max-[890px]:mt-0 mt-14 lg:mt-6">
           Our dedication to transparency means that our clients have a
           clear understanding of our processes, pricing, and outcomes
           fostering a strong sense of reliability and

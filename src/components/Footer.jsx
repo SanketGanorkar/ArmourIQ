@@ -41,7 +41,7 @@ const Footer = () => {
             <div className="flex flex-row mb-4 items-center">
               <FaPhoneVolume color="#FFFFFF" className=" mt-2" size={18} />
               <div className="flex flex-col">
-                <h5 className="text-white mt-1 ml-3">+1 469 296 9672</h5>
+                <h5 className="text-white mt-1 ml-3">+91 8007024111</h5>
               </div>
             </div>
             <div className="flex flex-row mb-4 items-center">
@@ -53,8 +53,8 @@ const Footer = () => {
           </div>
         </div>
         {/* Second column*/}
-        <div className="md:w-[60%] flex justify-between flex-wrap">
-          <div className="flex flex-col mt-4 md:mt-12">
+        <div className="md:w-[60%] flex justify-between flex-wrap gap-6">
+          <div className="flex flex-col mt-4 md:mt-12 max-sm:ml-2">
             <h4 className="text-white font-semibold text-[22px]">Company</h4>
             <h4
               className="text-white text-[15px] mb-4 mt-4 cursor-pointer hover:text-[#004AAD]"
@@ -91,7 +91,7 @@ const Footer = () => {
             </h4>
           </div>
           {/* Third column*/}
-          <div className="flex flex-col mt-4 md:mt-12">
+          <div className="flex flex-col mt-4 md:mt-12 max-sm:mr-2">
             <h4 className="text-white font-semibold text-[22px]">Services</h4>
             <Link
               to="/services/cloud"
@@ -125,18 +125,18 @@ const Footer = () => {
             </Link>
           </div>
           {/* Fourth column*/}
-          <div className="flex flex-col mt-4 md:mt-12">
+          <div className="flex flex-col mt-4 md:mt-12 max-sm:ml-2">
             <Link
               className="text-white text-[15px] mb-4 mt-4 hover:text-[#004AAD]"
               to="/services/soc"
             >
-              SOC & Management
+              SOC & MDR Services
             </Link>
             <Link
               className="text-white text-[15px] mb-4 hover:text-[#004AAD]"
               to="/services/maturity"
             >
-              Maturity Assessment
+              Cyber Security Maturity
             </Link>
             <Link
               className="text-white text-[15px] mb-4 hover:text-[#004AAD]"
@@ -144,17 +144,26 @@ const Footer = () => {
             >
               Virtual CISO as service
             </Link>
-            <Link
+            <p
+              onClick={() => {
+                navigate("/services/virtual")
+              }
+              }
               className="text-white text-[15px] mb-4 hover:text-[#004AAD]"
-              to="/services/staff"
             >
               Staff & Augmentation
-            </Link>
+            </p>
             <Link
               className="text-white text-[15px] mb-4 hover:text-[#004AAD]"
               to="/services/awareness"
             >
               Security Awareness
+            </Link>
+            <Link
+              className="text-white text-[15px] mb-4 hover:text-[#004AAD]"
+              to="/services/audit"
+            >
+              PCI DSS
             </Link>
           </div>
         </div>
@@ -167,23 +176,24 @@ const Footer = () => {
         <div className="flex flex-row justify-start pt-2 mb-3">
           <Link
             to="/terms-and-conditions"
-            className="mr-10 cursor-pointer hover:text-[#004AAD] text-nowrap"
+            className="mr-10 cursor-pointer hover:text-[#004AAD] text-nowrap text-[2px] text-xs"
           >
-            Terms Conditions
+            Terms & Conditions
           </Link>
           <Link
             to="/privacy-policy"
-            className="cursor-pointer hover:text-[#004AAD] text-nowrap"
+            className="cursor-pointer hover:text-[#004AAD] text-nowrap text-xs"
           >
             Privacy Policy
           </Link>
         </div>
 
-        <div className="pt-2 px-2 pb-2 bg-black text-white sm:text-nowrap min-h-[40px] mb-2 md:mb-0">
-          Copyright 2024 © All Rights Reserved, Twinflare Technologies LLP. dba. ArmourIQ
+        <div className="pt-2 px-2 pb-2 bg-black text-white sm:text-nowrap min-h-[40px] mb-2 md:mb-0 text-xs"
+        >
+          Copyright 2024 © All Rights Reserved, Twinflare Technologies LLP, dba ArmourIQ
         </div>
 
-        <div className="flex flex-row md:justify-end space-x-4">
+        <div className="flex flex-row md:justify-end space-x-4 text-xs">
           <Link to="https://www.linkedin.com/company/armouriq/" target="_blank">
             <FaLinkedin className="cursor-pointer" size={25} />
           </Link>

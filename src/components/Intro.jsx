@@ -5,6 +5,7 @@ import { FaDollarSign } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Intro = () => {
   const navigate = useNavigate();
@@ -13,13 +14,13 @@ const Intro = () => {
       id: 4,
       logo: <FaUserCog />,
       title: "Tailored",
-      desc: "The personalized approach ensures that your cybersecurity measures are effective and relevant to your organization's needs.",
+      desc: "Our customized approach ensures that your cybersecurity strategies are uniquely designed to address your organization's specific challenges and requirements.",
     },
     {
       id: 2,
       logo: <MdAccessibility />,
       title: "Accessibility",
-      desc: "Tailored solutions to meet your specific needs and ensure that essential cybersecurity measures are within reach.",
+      desc: "We provide solutions that are both comprehensive and easily accessible, ensuring that critical cybersecurity measures are available and achievable for your business.",
     },
     {
       id: 3,
@@ -36,6 +37,13 @@ const Intro = () => {
 
   ];
 
+  const typingText = "ASSESS → SECURE → DEFEND";
+
+  // const blink = {
+  //   from: { borderRightColor: 'transparent' },
+  //   to: { borderRightColor: 'white' },
+  // };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -50,20 +58,30 @@ const Intro = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             className="text-white font-bold text-nowrap max-sm:text-[11px] text-xl md:mb-3 max-sm:mb-3">
-            DEMOCRATIZING CYBERSECURITY
+            Democratizing Cybersecurity
           </motion.h2>
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }}
-            className="text-white font-bold text-3xl max-sm:text-[25px]">
-            ASSESS → SECURE → DEFEND
+            className="text-white font-bold text-4xl max-sm:text-[22px] flex gap-2 items-center"
+          >
+            <motion.span
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ ease: "easeInOut", duration: 8, delay: 0.5, repeat: Infinity }}
+              className="overflow-hidden whitespace-nowrap borderr-2 border-white"
+              style={{ display: "inline-block", animation: "blink 1s step-end infinite" }}
+            >
+              {typingText}
+            </motion.span>
+            {/* ASSESS → SECURE → DEFEND */}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5, delay: 0.7 }}
-            className="text-white mt-8">
+            className="text-white mt-8 lg:w-[50%]">
             Tailored services designed to meet the specific{" "}
             <span className="hidden sm:inline"></span>
             needs of diverse clients, from small startups to large{" "}
@@ -81,9 +99,9 @@ const Intro = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5, delay: 0.7 }}
-            className="flex flex-col mt-9 sm:flex-row sm:mt-16">
+            className="flex flex-col mt-4 sm:flex-row sm:mt-10">
             <button
-              className="bg-[#004bae] hover:bg-[#004ba0] text-white font-bold p-3 text-[15px] cursor-pointer w-2/5"
+              className="bg-[#004bae] hover:bg-[#004ba0] text-white font-bold p-3 text-[15px] cursor-pointer w-[15rem]"
               onClick={() => navigate("/services")}
             >
               LEARN MORE
@@ -92,14 +110,17 @@ const Intro = () => {
               <h2 className="text-white font-bold pt-3 text-[15px]">Call us</h2>
               <div className="flex flex-col">
                 <h2 className="text-white text-[15px] mt-1 sm:mt-3">
-                  +1 469 296 9672
+                  +91 8007024111
                 </h2>
               </div>
             </div>
           </motion.div>
+          <div className="mt-8">
+            <p className="text-white text-xl font-semibold">Why you choose us</p>
+          </div>
         </div>
         {/* Right Section */}
-        <div
+        {/* <div
           className="flex flex-wrap sm:flex-col sm:items-center">
           <div className="flex flex-col text-right max-sm:text-left">
             <div className="flex flex-col sm:pl-[50px] mt-[30px] sm:mt-[120px]">
@@ -154,11 +175,11 @@ const Intro = () => {
               </motion.div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Grid Section h-[299px] w-[299px] hover:h-[305px] hover:w-[305px]*/}
-      <div className="py-10 res-width">
+      <div className="pt-4 pb-10 res-width">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1rem] 2xl:gap-[3rem] place-items-center">
           {arr.map((item) => (
             <motion.div
@@ -179,28 +200,28 @@ const Intro = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.7, delay: 0.8 }}
-        className="w-screen bg-[#004AAD] min-h-[100px] lg:h-[150px] flex items-center justify-center md:flex md:flex-col md:items-center md:gap-y-4">
-        <div className="flex flex-row items-center justify-center py-4 gap-x-14 gap-y-4 lg:gap-24 flex-wrap max-md:grid max-md:grid-rows-2">
+        className="w-screen bg-[#004AAD] min-h-[100px] lg:min-h-[150px] flex items-center justify-center md:flex md:flex-col md:items-center md:gap-y-4">
+        <div className="flex flex-row items-center justify-center py-6 gap-x-14 lg:gap-x-24 gap-y-6 flex-wrap max-md:grid max-md:grid-rows-2">
           <div className="flex flex-col items-center">
             <div className="flex flex-row">
               <CountUp
                 delay={2}
-                end={10}
+                end={99}
                 className="text-white text-3xl font-semibold"
                 duration={2}
                 enableScrollSpy={true}
                 isScrollingDown={true}
               />
-              <h4 className="text-3xl text-white font-semibold">+</h4>
+              <h4 className="text-3xl text-white font-semibold">%</h4>
             </div>
 
-            <h4 className="font-semibold text-[30px] text-white ">Clients</h4>
+            <h4 className="font-semibold text-[25px] text-white">Satisfaction Rate</h4>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex flex-row">
               <CountUp
                 delay={2}
-                end={25}
+                end={200}
                 className="text-white text-3xl font-semibold"
                 duration={2}
                 enableScrollSpy={true}
@@ -209,23 +230,39 @@ const Intro = () => {
               <h4 className="text-3xl text-white font-semibold">+</h4>
             </div>
 
-            <h4 className="font-semibold text-[30px] ml-3 text-white">
-              Engagements
+            <h4 className="font-semibold text-[25px] ml-3 text-white">
+              Successful Projects
             </h4>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex flex-row">
-              <CountUp
+              {/* <CountUp
                 delay={2}
-                end={5}
+                end={24}
                 className="text-white text-3xl font-semibold ml-4"
                 duration={2}
                 enableScrollSpy={true}
                 isScrollingDown={true}
-              />
-              <h4 className="text-3xl text-white font-semibold">+</h4>
+              /> */}
+              <h4 className="text-3xl text-white font-semibold">24/7</h4>
             </div>
-            <h4 className="font-semibold text-[30px] ml-3 text-white">Team</h4>
+            <h4 className="font-semibold text-[25px] ml-3 text-white">Support</h4>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="flex flex-row">
+              <CountUp
+                delay={2}
+                end={98}
+                className="text-white text-3xl font-semibold"
+                duration={2}
+                enableScrollSpy={true}
+                isScrollingDown={true}
+              />
+              <h4 className="text-3xl text-white font-semibold">%</h4>
+            </div>
+            <h4 className="font-semibold text-[25px] ml-3 text-white">
+              Reduced Risk
+            </h4>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex flex-row">
@@ -237,15 +274,31 @@ const Intro = () => {
                 enableScrollSpy={true}
                 isScrollingDown={true}
               />
-              <h4 className="text-3xl text-white font-semibold">+</h4>
+              <h4 className="text-3xl text-white font-semibold">%</h4>
             </div>
-            <h4 className="font-semibold text-[30px] ml-3 text-white">
-              Assessment
+            <h4 className="font-semibold text-[25px] ml-3 text-white">
+              Faster Response Time
+            </h4>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="flex flex-row">
+              <CountUp
+                delay={2}
+                end={75}
+                className="text-white text-3xl font-semibold"
+                duration={2}
+                enableScrollSpy={true}
+                isScrollingDown={true}
+              />
+              <h4 className="text-3xl text-white font-semibold">%</h4>
+            </div>
+            <h4 className="font-semibold text-[25px] ml-3 text-white">
+              Improvement in Security Posture
             </h4>
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.div >
   );
 };
 

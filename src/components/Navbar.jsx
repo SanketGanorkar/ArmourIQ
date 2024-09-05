@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [visibleMenu, setVisibleMenu] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const navigate = useNavigate();
   return (
@@ -31,9 +32,9 @@ const Navbar = () => {
                 navigate("/")
               }}
             />
-            <ul className={`max-md:absolute max-md:transition ${visibleMenu ? "max-md:translate-x-0" : "max-md:translate-x-[21rem]"} -right-[1.1rem] top-[4.5rem] max-md:w-[20rem] max-md:pb-8 flex max-md:flex-col bg-white gap-10 items-end pr-6  md:items-center text-black list-none ml-auto font-[Roboto]`}>
+            <ul className={`max-md:absolute max-md:transition ${visibleMenu ? "max-md:translate-x-0" : "max-md:translate-x-[21rem]"} -right-[0.7rem] top-[4.8rem] max-md:w-[18rem] max-md:pb-8 flex max-md:flex-col max-md:bg-zinc-50 gap-10 items-center pr12  md:items-center text-black list-none ml-auto font-[Roboto]`}>
               <li
-                className="text-[20px] font-medium cursor-pointer"
+                className="text-[20px] font-medium cursor-pointer max-md:mt-6"
                 onClick={() => {
                   setVisibleMenu(false)
                   navigate("/");
@@ -52,12 +53,33 @@ const Navbar = () => {
               </li>
               <li
                 className="relative group text-[20px] font-medium cursor-pointer"
-                onClick={() => {
-                  setVisibleMenu(false)
-                  navigate("/services")
-                }}
+              // onMouseEnter={() => setOpen(pre => !pre)}
               >
-                Services
+                <p
+                  onClick={() => {
+                    setVisibleMenu(false)
+                    navigate("/services")
+                  }}
+                >
+                  Services
+                </p>
+                <motion.div
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  exit={{ scaleY: 0 }}
+                  style={{ transformOrigin: "top" }}
+                  className={`hidden md:group-hover:grid pt-6 md:hover:grid absolute bg-white h-auto w-[30rem] -left-[10rem] top-[1.5rem] text-[3px] grid grid-cols-2`}>
+                  <p onClick={() => navigate("/services/cloud")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Cloud Security</p>
+                  <p onClick={() => navigate("/services/mobile")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Mobile Security</p>
+                  <p onClick={() => navigate("/services/application")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Application Security</p>
+                  <p onClick={() => navigate("/services/network")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Network Security</p>
+                  <p onClick={() => navigate("/services/audit")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Audit & Compliance</p>
+                  <p onClick={() => navigate("/services/soc")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">SOC & MDR Services</p>
+                  <p onClick={() => navigate("/services/maturity")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Cyber Security Maturity</p>
+                  <p onClick={() => navigate("/services/virtual")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Virtual CISO as a Service</p>
+                  <p onClick={() => navigate("/services/awareness")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Security Program</p>
+                  <p className="px-6 py-3 bg-zinc-50"></p>
+                </motion.div>
               </li>
               <li
                 className="relative group text-[20px] font-medium cursor-pointer"
