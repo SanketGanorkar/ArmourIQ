@@ -25,6 +25,13 @@ const Testimonials = () => {
       name: "Craig Hill",
       desig: "Founder & CEO",
     },
+    {
+      id: 4,
+      desc: "ArmourIQ's VPAT service ensured thorough security compliance with ease. Their expertise and attention to detail exceeded our expectations.",
+      img: user,
+      name: "Abhay Verma",
+      desig: "CEO",
+    },
   ];
 
   return (
@@ -34,7 +41,7 @@ const Testimonials = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.5 }}
-          className="flex flex-row text-black max-sm:flex-col items-end gap-14 my-6 mt-20">
+          className="flex flex-row text-black max-sm:flex-col sm:items-end gap-4 sm:gap-14 my-6 mt-20">
           <div>
             <h5 className="font-bold text-[#004bae]">TESTIMONIALS</h5>
             <h2 className="font-bold text-3xl">
@@ -48,26 +55,26 @@ const Testimonials = () => {
           </div>
         </motion.div>
         <div className="max-lg:overflow-x-scroll">
-          <div className="flex flex-row gap-2 md:gap-4 xl:gap-12 max-lg:w-[65rem] max-md:overflow-x-scroll">
+          <div className="flex flex-row gap-2 md:gap-4 xl:gap-12 max-xl:w-[75rem] max-xl:overflow-x-scroll">
             {arr.map((item) => (
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ ease: "easeInOut", duration: 0.5 }}
                 key={item.id}
-                className="bg-[#F6F5F5] mb-9 border-[2px] w-[342px] h-[250px] mt-6 md:mt-12 pl-6 pr-3"
+                className="bg-[#F6F5F5] mb-9 border-[2px] w-[342px] h-auto mt-6 md:mt-12 pl-6 pr-3 py-4 flex flex-col justify-between"
               >
-                <div className="flex flex-row mt-3">
+                {/* <div className="flex flex-row mt-3">
                   <FaStar color="black" className="mt-8" />
                   <FaStar color="black" className="ml-2 mt-8" />
                   <FaStar color="black" className="ml-2 mt-8" />
                   <FaStar color="black" className="ml-2 mt-8" />
                   <FaStar color="black" className="ml-2 mt-8" />
-                </div>
+                </div> */}
                 <p className="text-black mt-3">{item.desc}</p>
-                <div className="flex flex-row">
-                  <img src={item.img} className="h-[70px] mt-3 mb-3" />
-                  <div className="flex flex-col mt-5 ml-5">
+                <div className="flex flex-row items-center py-2">
+                  <img src={item.img} className="h-[70px]" />
+                  <div className="flex flex-col ml-5">
                     <h2 className="text-black font-semibold">{item.name}</h2>
                     <h6 className="text-black text-[14px]">{item.desig}</h6>
                   </div>

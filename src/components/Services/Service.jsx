@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { services } from "../../data/services.js";
 import { FaCheck } from "react-icons/fa";
 import Footer from "./../Footer.jsx";
 import { useParams, Link } from "react-router-dom";
 import Contact from "./Contact/ContactD.jsx";
 import { motion } from "framer-motion";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 function Service() {
   const { param } = useParams();
+  const expRef = useRef(null);
+
+  const [marginBottom, setMarginBottom] = useState(100);
+
+
+  const changeMargin = () => {
+    if (expRef.current) {
+      setMarginBottom(expRef.current.clientHeight ? expRef.current.clientHeight + 5 : 100);
+    }
+  }
+  const [openApproach, setOpenApproach] = useState({
+  });
+
+  useEffect(() => {
+    changeMargin();
+    console.log(expRef.current ? expRef.current.clientHeight : "unde");
+  }, [openApproach]);
+
   const sidebar = [
     {
       id: 1,
@@ -36,12 +55,12 @@ function Service() {
     },
     {
       id: 6,
-      title: "SOC & Services",
+      title: "SOC & MDR Services",
       path: "/services/soc",
     },
     {
       id: 7,
-      title: "Maturity Assessment",
+      title: "Cyber Security Maturity",
       path: "/services/maturity",
     },
     {
@@ -55,6 +74,27 @@ function Service() {
       path: "/services/awareness",
     },
   ];
+
+
+
+  useEffect(() => {
+    setOpenApproach({
+    })
+  }, [param])
+
+
+  const handleClick = (ind, content) => {
+    if (openApproach.number === ind) {
+      setOpenApproach({});
+    }
+    else {
+      setOpenApproach({
+        number: ind,
+        content: content
+      });
+    }
+  }
+  // ${expRef.current ? `mb-[${expRef.current.clientHeight}px]` : ""}
   return (
     <div className="overflow-x-hidden flex flex-col items-center">
       <motion.div
@@ -136,21 +176,64 @@ function Service() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeInOut", duration: 0.5 }}
-              className="mt-5 max-md:px-3 py-12 rounded-lg shadow-sm bg-[#F6F5F5] drop-shadow-lg">
-              <ul className="pt-1 md:ml-4 ml-4 text-black list-disc-custom grid max-[868px]:grid-cols-1 grid-cols-2 gap-y-5 max-xl:gap-5 xl:px-3">
-                {services[param].approaches.data?.map((item, index) => (
-                  <li
-                    className=" text-base sm:text-lg max-sm:ml-2 text-black max-sm:mt-3 flex list-disc gap-2"
-                    key={index}
-                  >
-                    {/* <div className="bg-black rounded-full h-[6px] w-[6px]"></div> */}
-                    <div className="leading-loose text-pretty">
-                      <span className="font-semibold">{item.approachHead}</span>{" "}
-                      - {item.content}
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              className="mt-5 max-md:px-3 rounded-lg">
+              <div className="md:bg[#F6F5F5] flex flex-col">
+                {/* <ul className="columns-1 md:columns-2 lg:columns-3 gap-2 w-full"> */}
+                <ul className="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full relative">
+                  {services[param].approaches.data?.map((item, index) => (
+                    <li
+                      className={`cursor-pointer ${index === openApproach.number ? `lg:max-[1190px]:mb-[115px]` : ""} text-base sm:text-lg ${index === 0 ? "mt-0" : "mt2"} text-black flex flex-col w-full break-inside-avoid`}
+                      key={index}
+                      style={{
+                        marginBottom: index === openApproach.number ? `${marginBottom}px` : '0px'
+                      }}
+                      onClick={() => handleClick(
+                        index, item.content
+                      )}
+                    >
+                      <div className={`${index === openApproach.number ? "bg-zinc-300" : "bg-zinc-200"} h-[4rem] px-4 flex w-full items-center justify-between`}>
+                        <div className="leading-loose text-pretty ">
+                          <span className="font-semibold">{item.approachHead}</span>
+                        </div>
+                        <div>
+                          {
+                            openApproach.number === index &&
+                            <FaArrowRightLong />
+                          }
+                        </div>
+                      </div>
+                      {index === openApproach.number &&
+                        <motion.div
+                          initial={{ scaleY: 0 }}
+                          animate={{ scaleY: 1 }}
+                          transition={{ ease: "easeInOut", duration: 0.2 }}
+                          style={{ transformOrigin: "top" }}
+                          ref={expRef}
+                          className={`bg-zinc-100 lg:absolute h-auto w-full left-0 lg:mt-[4rem] top-[${12 * index + 1}rem]`}>
+                          <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ ease: "easeInOut", duration: 0.3, delay: 0.2 }}
+                            className="p-4">
+                            {openApproach.content}
+                          </motion.p>
+                        </motion.div>}
+                    </li>
+                  ))}
+                </ul>
+                {/* <div
+                  className="max-md:hidden w-full h-auto bg-white flex items-center">
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ ease: "easeInOut", duration: 0.5 }}
+                    className="m-6 text-lg transition">
+                    {
+                      openApproach.content
+                    }
+                  </motion.p>
+                </div> */}
+              </div>
             </motion.div>
           )}
 
@@ -185,54 +268,58 @@ function Service() {
             </motion.div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 bg-white gap-6 mt-12">
-            {services[param].extra &&
-              services[param].extra.map((item, index) => (
+          {
+            services[param].services_in_service && (
+              <div className="my-12">
+                <p className="mb-6 text-black text-3xl font-bold">
+                  {
+                    services[param].services_in_service.head
+                  }
+                </p>
+                <div className={`grid ${services[param].services_in_service.data.length < 4 ? `md:grid-cols-${services[param].services_in_service.data.length}` : "md:grid-cols-4"} grid-cols-1 gap-4`}>
+                  {
+                    services[param].services_in_service.data.map((item, ind) => (
+                      <div key={ind} className="bg-zinc-100 min-h-[10rem] px-6 py-6 flex flex-col justify-center items-center gap-3 drop-shadow-lg">
+                        <p className="text-xl text-center font-semibold">
+                          {item.serviceHead}
+                        </p>
+                        <p>
+                          {item.content}
+                        </p>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            )
+          }
+
+          {services[param].extra &&
+            <div id="extra" className={`grid grid-cols-1 ${services[param].extra.length === 1 ? "" : "md:grid-cols-2"} bg-white gap-10 mt-12`}>
+              {services[param].extra.map((item, index) => (
                 <div key={index} className="extra-cont">
                   <h1 className="extra-content">{item.head}</h1>
                   <p className="extra-con-para">{item.content}</p>
                 </div>
               ))}
-          </div>
+            </div>
+          }
           <div className="contact-in-services flex flex-col ">
             <div className="lg:w-[60%]">
               <p className="extra-con-para">{services[param].getInTouch}</p>
             </div>
           </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="py-10 pt-0 mt-16 flex flex-col justify-center items-center">
-            <h1 className="font-bold text-4xl max-sm:text-2xl">
-              Frequently Asked Questions
-            </h1>
-            <h3 className="font-normal text-xl text-gray-500 mt-2">
-              Your Queries, Our Answers
-            </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10 w-full gap-y-5 mt-5">
-              {services?.[param]?.faq?.map((faqItem, index) => (
-                <details key={index} className="mb-5 mt-2" name="accordian">
-                  <summary className="font-bold text-xl cursor-pointer">
-                    {faqItem.question}
-                  </summary>
-                  <p className="text-gray-500 ml-6 text-pretty">{faqItem.answer}</p>
-                </details>
-              ))}
-            </div>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="flex flex-row gap-6 mt-10 max-xl:flex-col">
+            className="flex flex-row gap-6 mt-10 max-xl:flex-col border-t-[2px] pt-8">
             <div>
-              <button className="bg-black text-white w-[105px] text-center rounded-sm p-1">
+              <Link to="/contact" className="bg-black text-white w-[105px] text-center rounded-sm p-1">
                 Get Started
-              </button>
+              </Link>
               <p className="mt-2 md:w-full w-full text-pretty">
                 {services[param].getStarted}
               </p>
@@ -249,3 +336,19 @@ function Service() {
 }
 
 export default Service;
+
+
+// {
+//   services[param].approaches.data?.map((item, index) => (
+//     <li
+//       className=" text-base sm:text-lg max-sm:ml-2 text-black max-sm:mt-3 flex list-disc gap-2"
+//       key={index}
+//     >
+//       {/* <div className="bg-black rounded-full h-[6px] w-[6px]"></div> */}
+//       <div className="leading-loose text-pretty">
+//         <span className="font-semibold">{item.approachHead}</span>{" "}
+//         - {item.content}
+//       </div>
+//     </li>
+//   ))
+// }

@@ -18,9 +18,9 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const serviceId = "service_wcm3o3j";
-    const templateID = "template_93tgdo8";
-    const publicKey = "DuSbBCyG3R1hNDXzG";
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const templateID = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY
 
     const templateParams = {
       from_name: name,
@@ -28,9 +28,23 @@ const Contact = () => {
       from_message: message,
       from_subject: subject,
       from_number: number,
-      to_name: "Sanket",
+      to_name: "Ashutosh",
       message: message,
     };
+
+    console.log(serviceId, templateID, publicKey);
+
+    if (name === "" || email === "" || message === "" || subject === "" || number === "") {
+      window.alert("All fields are required!");
+      return;
+    }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+      window.alert("Please enter valid email address!");
+      return;
+    }
 
     emailjs
       .send(serviceId, templateID, templateParams, publicKey)
@@ -74,17 +88,13 @@ const Contact = () => {
         </div>
         <div className="h-fit flex max-md:flex-col gap-4 md:gap-8">
           <div className="md:mt-12 lg:max-xl:w-1/3 xl:w-fit max-sm:w-screen max-sm:pl-4 ">
-            <motion.h3
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ease: "easeInOut", duration: 0.5 }}
-              className="ml-3 mb-1 text-[#004bae] font-bold">CONTACT US</motion.h3>
+
             <motion.h2
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }}
               className="ml-3 mt-1 text-white text-3xl font-bold">
-              Contact Information
+              Contact Info
             </motion.h2>
             <motion.div
               initial={{ opacity: 0, y: -30 }}
@@ -110,7 +120,7 @@ const Contact = () => {
               className="flex flex-row mt-6 items-center">
               <FaPhoneVolume color="#004bae" className="ml-4" size={22} />
               <div className="flex flex-col">
-                <h5 className="text-white ml-5">+1 469 296 9672</h5>
+                <h5 className="text-white ml-5">+91 8007024111</h5>
               </div>
             </motion.div>
             <motion.div
@@ -124,11 +134,13 @@ const Contact = () => {
               </div>
             </motion.div>
           </div>
-          <motion.div
+          <motion.form
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.6, delay: 0.3 }}
-            className="flex flex-col text-white md:mt-12 h-fit max-sm:px-4">
+            className="flex flex-col text-white md:mt-12 h-fit max-sm:px-4"
+            onSubmit={handleSubmit}
+          >
             <input
               type="text"
               placeholder="Name"
@@ -146,7 +158,7 @@ const Contact = () => {
               />
               <input
                 type="email"
-                placeholder="Mail"
+                placeholder="E-mail"
                 className="text-white h-[40px] w-[80%] p-3 border-[#004bae] border-[1px] bg-[#000000]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -168,11 +180,11 @@ const Contact = () => {
             />
             <button
               className="bg-[#004bae] p-3 font-bold w-full"
-              onClick={handleSubmit}
+              type="submit"
             >
               SEND
             </button>
-          </motion.div>
+          </motion.form>
         </div>
       </div>
       <motion.div

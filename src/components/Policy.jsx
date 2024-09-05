@@ -23,7 +23,7 @@ const Policies = () => {
             Moreover, if you wish to opt out of future emails, unsubscribe
             options are readily available within the registration form.
           </p>
-          <h1 className="text-[20px] md:text-[26px] lg:text-[30px] mt-[40px] text-black font-semibold">
+          <h1 className="mt-8 text-black text-[1.2rem] md:text-[1.5rem]">
             Personal Information We Collect
           </h1>
           <ol className="list-disc text-black font-normal text-base md:text-lg lg:text-xl ml-5 md:ml-10 lg:ml-12 mt-5">
@@ -41,7 +41,7 @@ const Policies = () => {
               marketing endeavors.
             </li>
           </ol>
-          <h1 className="text-[20px] md:text-[26px] lg:text-[30px] mt-[40px] text-black font-semibold">
+          <h1 className="mt-8 text-black text-[1.2rem] md:text-[1.5rem]">
             Notification of Changes
           </h1>
           <ol className="list-disc text-black font-normal text-base md:text-lg lg:text-xl ml-5 md:ml-10 lg:ml-12 mt-5">
@@ -51,7 +51,7 @@ const Policies = () => {
               promptly posted on our website.
             </li>
           </ol>
-          <h1 className="text-[20px] md:text-[26px] lg:text-[30px] mt-[40px] text-black font-semibold">
+          <h1 className="mt-8 text-black text-[1.2rem] md:text-[1.5rem]">
             Web Servers
           </h1>
           <ol className="list-disc text-black font-normal text-base md:text-lg lg:text-xl ml-5 md:ml-10 lg:ml-12 mt-5">
@@ -61,7 +61,7 @@ const Policies = () => {
               visit the site.
             </li>
           </ol>
-          <h1 className="text-[20px] font-semibold md:text-[26px] lg:text-[30px] mt-[40px] text-black">
+          <h1 className="mt-8 text-black text-[1.2rem] md:text-[1.5rem]">
             Copyrights & Trademarks
           </h1>
           <ol className="list-disc text-black font-normal text-base md:text-lg lg:text-xl ml-5 md:ml-10 lg:ml-12 mt-5">
@@ -76,7 +76,7 @@ const Policies = () => {
             <li>
               Reprinting ArmourIQ content on any medium without prior written
               permission is prohibited. The copyright for content provided by
-              ArmourIQ Solutions will remain our property.
+              ArmourIQ will remain our property.
             </li>
           </ol>
         </div>

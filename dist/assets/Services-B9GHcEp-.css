@@ -1,0 +1,1 @@
+details{overflow:hidden}details[open] summary+p{max-height:500px;transition:max-height .3s ease-in-out}details summary+p{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}

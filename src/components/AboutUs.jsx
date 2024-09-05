@@ -1,5 +1,5 @@
 import { MdOutlineEmail } from "react-icons/md";
-import about from "../../public/assets/about_intro.jpeg";
+import about from "../../public/assets/about.jpeg";
 import {
   FaBullseye,
   FaEye,
@@ -30,9 +30,9 @@ const AboutUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const serviceId = "service_wcm3o3j";
-    const templateID = "template_93tgdo8";
-    const publicKey = "DuSbBCyG3R1hNDXzG";
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const templateID = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY
 
     const templateParams = {
       from_name: name,
@@ -40,9 +40,20 @@ const AboutUs = () => {
       from_message: message,
       from_subject: subject,
       from_number: number,
-      to_name: "Sanket",
+      to_name: "Ashutosh",
       message: message,
     };
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (name === "" || email === "" || message === "" || number === "") {
+      window.alert("All fields are required!");
+      return;
+    }
+
+    if (!emailRegex.test(email)) {
+      window.alert("Enter valid email address!");
+      return;
+    }
 
     emailjs
       .send(serviceId, templateID, templateParams, publicKey)
@@ -65,19 +76,19 @@ const AboutUs = () => {
       id: 1,
       logo: <FaBullseye size={30} />,
       title: "Our Mission",
-      desc: "Our mission at ArmourIQ Solutions is to empower businesses to grow, become efficient, and become successful through innovative IT solutions. Technology services that enable our clients to thrive in the digital age are at the forefront of our commitment to delivering cutting-edge technology services.",
+      desc: "At ArmourIQ, we are driven by the belief that every business, regardless of its size or industry, deserves the peace of mind that comes from knowing its digital assets are fully protected. Our mission, \"Cybersecurity for All,\" is at the core of everything we do. We are dedicated to making top-tier cybersecurity solutions accessible to every organization, no matter its size or budget.",
     },
     {
       id: 2,
       logo: <FaEye size={30} />,
       title: "Our Vision",
-      desc: "As a leading IT consulting firm in India, ArmourIQ Solutions aims to be known for our expertise, integrity, and client-centric approach. To become trusted partners in our clients' digital transformation journeys, we continuously innovate and adapt to emerging technologies.",
+      desc: "At ArmourIQ, our vision is to democratize cybersecurity. We believe robust cybersecurity should be a fundamental right, not a privilege reserved for a select few. Our commitment to Universal Access ensures that every organization, regardless of size, can protect its digital assets effectively. Our approach to Inclusivity fosters a secure digital environment where every business has the opportunity to thrive.",
     },
     {
       id: 3,
       logo: <FaHandshake size={30} />,
       title: "Our Values",
-      desc: "ArmourIQ Solutions, an IT consulting firm in India, is committed to excellence, innovation, integrity, client-centricity, collaboration, and continuous learning. Our goal is to fulfill clients' needs by delivering top-notch solutions. In the digital age, we empower businesses to prosper through our culture of teamwork and growth.",
+      desc: "ArmourIQ is driven by a commitment to excellence, innovation, integrity, client focus, collaboration, and continuous learning. Our mission is to deliver exceptional solutions that meet the evolving needs of our clients. In today’s digital landscape, we enable businesses to succeed through a strong culture of teamwork and growth.",
     },
   ];
 
@@ -145,28 +156,15 @@ const AboutUs = () => {
             animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             src={about}
-            className="mt-11 w-full rounded-2xl"
+            className="mt-11 mb-12 w-full rounded-2xl"
           />
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
-            className="text-black font-semibold text-3xl mt-[70px]">
-            About Us
-          </motion.h1>
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             className="w-full">
             <p className="text-black font-normal text-sm md:text-xl mt-3 text-pretty">
-              At the heart of innovation, where technology meets craftsmanship,
-              our company stands as a beacon of transformation and excellence.
-              We are not merely cybersecurity experts we are pioneers committed
-              to reshaping industry landscapes through digital fortification.
-              Our services transcend mere protection—they are missions to
-              safeguard the digital assets of businesses worldwide, propelling
-              them towards their zenith.
+              ArmourIQ is a cybersecurity consulting firm dedicated to safeguarding organisations from evolving threats. Our team of experts provides tailored Cyber Security solutions to protect your critical assets and ensure compliance with industry regulations.
             </p>
           </motion.div>
           <div className="flex flex-col w-full lg:flex-row items-center mt-6 lg:mt-10 ">
@@ -280,12 +278,8 @@ const AboutUs = () => {
               <h4 className="text-black font-bold text-3xl mt-3">
                 Your Trusted Partner in Cybersecurity
               </h4>
-              <p className="text-black font-normal text-sm md:text-lg lg:text-xl text-wrap mt-3">
-                With our cutting-edge solutions and expert team, we ensure
-                that your company is safeguarded against the latest cyber
-                threats. Our commitment to excellence and customer
-                satisfaction sets us apart as leaders in the cybersecurity
-                industry.
+              <p className="text-black font-normal text-wrap mt-3">
+                ArmourIQ is more than just a service provider—we are your strategic partner in safeguarding your business. With a team of seasoned cybersecurity experts, we deliver unparalleled protection against the latest cyber threats. Our commitment to excellence, deep industry knowledge, and focus on customer satisfaction distinguish us within the cybersecurity industry. Trust ArmourIQ to not only defend your organization but also to enhance your overall security posture, ensuring long-term resilience and success.
               </p>
             </motion.div>
             <motion.div
@@ -382,7 +376,8 @@ const AboutUs = () => {
         <div className="res-width flex flex-col lg:flex-row justify-between mt-[40px] max-sm:mt-[70px] gap-8">
           <div className="flex flex-col ">
             <h1 className="text-black font-semibold text-[18px] lg:max-w-[25rem]">
-              Secure Your Business with Armour IQ
+              Secure Your Business with ArmourIQ
+              <br />
               Have questions or need help?{" "}
               Our experts are here for you.
             </h1>
@@ -406,7 +401,7 @@ const AboutUs = () => {
                   <div className="flex flex-row items-center mb-0">
                     <FaPhoneAlt color="#004AAD" className="mr-2" size={17} />
                     <h5 className="text-black font-semibold ml-1 text-[17px]">
-                      +91 6306867803
+                      +91 8007024111
                     </h5>
                   </div>
                   <div className="flex flex-row items-center mb-2 mt-4">
@@ -419,25 +414,27 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="mb-8">
-              <div className="flex flex-col text-black">
+              <form className="flex flex-col text-black"
+                onSubmit={handleSubmit}
+              >
                 <input
                   type="text"
-                  placeholder="Your name"
+                  placeholder="Name"
                   className="w-full p-3 h-[40px] border-[#004bae] border-[1px] bg-[#F6F5F5] mb-3"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
                 <div className="flex flex-row w-full gap-2">
                   <input
-                    type="text"
-                    placeholder="Your Phone Number"
+                    type="number"
+                    placeholder="Phone Number"
                     className="p-3 w-[60%] h-[40px] border-[#004bae] border-[1px] bg-[#F6F5F5]"
                     value={number}
                     onChange={(e) => setNumber(e.target.value)}
                   />
                   <input
                     type="email"
-                    placeholder="Your Mail"
+                    placeholder="E-mail"
                     className="h-[40px] w-[80%] p-3 border-[#004bae] border-[1px] bg-[#F6F5F5]"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -445,18 +442,18 @@ const AboutUs = () => {
                 </div>
                 <textarea
                   type="text"
-                  placeholder="Your Message"
+                  placeholder="Message"
                   className="w-full pl-2 pt-2 h-[100px] border-[#004bae] border-[1px] bg-[#F6F5F5] my-3"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 />
                 <button
                   className="bg-[#004bae] p-3 font-bold w-full text-white"
-                  onClick={handleSubmit}
+                  type="submit"
                 >
-                  SEND MAIL
+                  SEND
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>

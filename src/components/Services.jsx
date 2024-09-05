@@ -6,6 +6,8 @@ import { TbCloudComputing } from "react-icons/tb";
 import { MdSettingsApplications } from "react-icons/md";
 import { AiFillSecurityScan } from "react-icons/ai";
 import { motion } from "framer-motion";
+// import icon from "";
+
 
 const Services = () => {
   const services = [
@@ -16,31 +18,37 @@ const Services = () => {
       highlights: [
         "Enhanced Security",
         "Compliance Assurance",
-        "Cost Efficiency",
+        "Proactive Threat Detection",
+        "Optimized Security Configurations",
+        "Ongoing Security Enhancement"
       ],
-      logo: <TbCloudComputing />,
+      logo: "../assets/Secure Cloud.png",
     },
     {
       id: 2,
       title: "Mobile Security",
       path: "/services/mobile",
       highlights: [
-        "Proactive Application Security",
-        "Protect User Data",
+        "Comprehensive Threat Identification",
+        "Enhanced Application Security",
+        "Protection of User Data",
         "Compliance Assurance",
+        "Actionable Insights"
       ],
-      logo: <FaMobileAlt />,
+      logo: "../assets/One Time Password.png",
     },
     {
       id: 3,
       title: "Application Security",
       path: "/services/application",
       highlights: [
-        "Proactive Application Security",
-        "Compliance Assurance",
-        "Risk Mitigation",
+        "Improved Security",
+        "Enhanced Reputation",
+        "Cost Savings",
+        "Improved Performance",
+        "Increased Efficiency",
       ],
-      logo: <MdSettingsApplications />,
+      logo: "../assets/Web Application Firewall-1.png",
     },
     {
       id: 4,
@@ -50,8 +58,9 @@ const Services = () => {
         "Enhanced Network Security",
         "Compliance Assurance",
         "Risk Mitigation",
+        "Peace of Mind",
       ],
-      logo: <TbCloudComputing />,
+      logo: "../assets/Security Shield.png",
     },
     {
       id: 5,
@@ -61,91 +70,101 @@ const Services = () => {
         "Enhanced Security Posture",
         "Compliance Assurance",
         "Risk Mitigation",
+        "Peace of Mind",
       ],
-      logo: <TbCloudComputing />,
+      logo: "../assets/Office 365 Security & Compliance.png"
     },
     {
       id: 6,
-      title: "SOC & Services",
+      title: "SOC & MDR Services",
       path: "/services/soc",
       highlights: [
-        "Active Threat Management",
-        "Expert Incident Response",
-        "Strategic Security Guidance",
+        "Enhanced Threat Detection",
+        "Rapid Incident Response",
+        "Continuous Protection",
+        "Improved Security Posture",
       ],
-      logo: <TbCloudComputing />,
+      logo: "../assets/Cyber Security.png"
     },
     {
       id: 7,
       title: "Maturity Assessment",
       path: "/services/maturity",
       highlights: [
-        "Enhanced Security Posture",
-        "Strategic Guidance",
-        "Compliance Assurance",
+        "Enhanced Security Maturity",
+        "Risk Mitigation",
+        "Tailored Improvement Plan",
+        "Continuous Improvement",
       ],
-      logo: <TbCloudComputing />,
+      logo: "../assets/Cyber Security-1.png"
     },
     {
       id: 8,
       title: "Virtual CISO as a Service",
       path: "/services/virtual",
       highlights: [
-        "Cost-Effective Expertise",
-        "Efficient Technology Selection",
-        "On-Demand Services",
+        "Strategic Security Alignment",
+        "Effective Risk Management",
+        "Robust Security Policies",
+        "Continuous Security Oversight",
+        "Prepared Incident Response",
       ],
-      logo: <TbCloudComputing />,
+      logo: "../assets/Network.png"
     },
     {
       id: 9,
       title: "Security Program",
       path: "/services/awareness",
       highlights: [
-        "Security Awareness Training",
-        "Simulated Social Engineering Test",
+        "Increased Employee Vigilance",
+        "Enhanced Security Culture",
+        "Improved Threat Detection",
+        "Actionable Insights",
       ],
-      logo: <AiFillSecurityScan />,
+      logo: "../assets/Cyberark.png"
     },
   ];
   const faqs = [
     {
-      id: 1,
-      question: "What types of cybersecurity solutions do you offer?",
-      answer:
-        "We offer a comprehensive range of cybersecurity solutions, including network security, endpoint protection, cloud security, identity and access management, and threat intelligence.",
+      "id": 1,
+      "question": "What is a Mobile Application Penetration Test?",
+      "answer": "A penetration test simulates real-world attacks on your mobile apps to identify vulnerabilities and assess their security posture."
     },
     {
-      id: 2,
-      question: "How do you ensure the security of sensitive data?",
-      answer:
-        "We implement advanced encryption, multi-factor authentication, and continuous monitoring to protect sensitive data from unauthorized access and breaches.",
+      "id": 2,
+      "question": "Why is Source Code Review crucial for mobile applications?",
+      "answer": "Source code review helps identify security flaws, coding errors, and backdoors within your mobile application's code, ensuring proactive protection."
     },
     {
-      id: 3,
-      question:
-        "What industries do you serve with your cybersecurity services?",
-      answer:
-        "We serve various industries including finance, healthcare, retail, government, and education, providing tailored cybersecurity solutions to meet industry-specific challenges.",
+      "id": 3,
+      "question": "What does ArmourIQ's Application Security Testing involve?",
+      "answer": "Our application security testing includes both automated and manual assessments to identify vulnerabilities in your web applications and APIs."
     },
     {
-      id: 4,
-      question: "Do you offer 24/7 monitoring and support?",
-      answer:
-        "Yes, we provide round-the-clock monitoring and support to ensure your systems are always protected and any potential threats are addressed immediately.",
+      "id": 4,
+      "question": "What is an Application Security Architecture Review?",
+      "answer": "This review evaluates your application's design and architecture to identify potential security weaknesses and ensure it's built with security in mind."
     },
     {
-      id: 5,
-      question: "How can your services help with regulatory compliance?",
-      answer:
-        "Our cybersecurity solutions help organizations comply with industry regulations such as GDPR, HIPAA, and PCI-DSS by providing robust security controls and regular audits.",
+      "id": 5,
+      "question": "How does ArmourIQ support a Secure Software Development Lifecycle (SDLC)?",
+      "answer": "ArmourIQ integrates security best practices into your SDLC, providing guidance and support throughout the development process."
     },
     {
-      id: 6,
-      question: "Can you help with incident response and recovery?",
-      answer:
-        "Absolutely. Our team is equipped to handle incident response, helping you quickly contain, mitigate, and recover from cybersecurity incidents.",
+      "id": 6,
+      "question": "What is the difference between a Network Vulnerability Assessment and Network Penetration Testing?",
+      "answer": "A vulnerability assessment identifies potential weaknesses in your network, while penetration testing simulates attacks to assess the effectiveness of your security controls."
     },
+    {
+      "id": 7,
+      "question": "What is involved in a Network Architecture Security Review?",
+      "answer": "This review examines your network's design and configuration to identify potential security risks and provide recommendations for improvement."
+    },
+    {
+      "id": 8,
+      "question": "How does ArmourIQ conduct Wireless Penetration Testing?",
+      "answer": "We assess your wireless networks for vulnerabilities that could be exploited by attackers, such as weak encryption or unauthorized access points."
+    }
   ];
 
   return (
@@ -195,13 +214,17 @@ const Services = () => {
                 className="group max-sm:w-[90%] max-w-[28rem] min-h-[230px] drop-shadow-lg mb-5 h-full flex justify-center"
               >
                 {/* For Desktop */}
-                <Link to={item.path} className=" w-full h-full">
-                  <div className="bg-[#F6F5F5] h-full text-black p-6 rounded-lg flex flex-col justify-between items-center border-[#004bae] border-[1px] w-full cursor-pointer hover:bg-[#004bae] hover:border-white hover:border-[1px] hover:text-white transition-all duration-300">
+                <Link to={item.path} className="w-full h-full">
+                  <div className="relative bg-[#F6F5F5] h-full text-black p-6 rounded-lg flex flex-col justify-between items-center pt-32 border-[#004bae] border-[1px] w-full cursor-pointer hover:bg-[#004bae] hover:border-white hover:border-[1px] hover:text-white transition-all duration-300">
+                    <div
+                      className="translate-y-0 transition ease-in-out group-hover:-translate-y-[1rem] h-[6rem] w-[6rem] flex items-center justify-center absolute top-5 bg-slate-300/50 group-hover:bg-slate-300/20 rounded-full drop-shadow-xl">
+                      <img src={item.logo} alt="" className="h-[60%] w-auto object-cover " />
+                    </div>
                     <div className="w-full h-full flex flex-col items-center justify-center">
                       {/* <img src={item.logo} className="" /> */}
                       <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                       <ul className="list-disc text-left pl-5 mb-2">
-                        {item.highlights.slice(0, 3).map((highlight, index) => (
+                        {item.highlights.slice(0, 4).map((highlight, index) => (
                           <li key={index}>{highlight}</li>
                         ))}
                       </ul>
@@ -241,7 +264,7 @@ const Services = () => {
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
             className="font-bold text-4xl max-sm:text-2xl">
-            Frequently Asked Questions
+            FAQs
           </motion.h1>
           <motion.h3
             initial={{ opacity: 0 }}
@@ -258,15 +281,20 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ ease: "easeInOut", duration: 0.5, delay: 0.2 }}
                   className="group cursor-pointer" name="accordian">
-                  <summary className="font-semibold text-[15px] text-black">
+                  <summary className="font-semibold text-[15px] text-black bg-zinc-200 px-3 py-4">
                     {faq.question}
                   </summary>
-                  <p className="text-[15px] text-black ml-2 sm:ml-5">
+                  <motion.p
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    transition={{ ease: "easeInOut", duration: 0.1 }}
+                    style={{ transformOrigin: "top" }}
+                    className="text-[15px] text-black bg-zinc-100 p-2 pl-8">
                     {faq.answer}
-                  </p>
+                  </motion.p>
                 </motion.details>
                 {index < faqs.length && (
-                  <hr className="border-t-1 border-gray-300 mt-3" />
+                  <hr className="border-t-1 border-gray-300 mt-1" />
                 )}
               </div>
             ))}
