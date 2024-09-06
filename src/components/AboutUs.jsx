@@ -32,7 +32,7 @@ const AboutUs = () => {
 
     const serviceId = import.meta.env.VITE_SERVICE_ID;
     const templateID = import.meta.env.VITE_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_PUBLIC_KEY
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
     const templateParams = {
       from_name: name,
@@ -74,21 +74,21 @@ const AboutUs = () => {
   const visionMissionValues = [
     {
       id: 1,
-      logo: <FaBullseye size={30} />,
-      title: "Our Mission",
-      desc: "At ArmourIQ, we are driven by the belief that every business, regardless of its size or industry, deserves the peace of mind that comes from knowing its digital assets are fully protected. Our mission, \"Cybersecurity for All,\" is at the core of everything we do. We are dedicated to making top-tier cybersecurity solutions accessible to every organization, no matter its size or budget.",
+      logo: <FaEye size={60} />,
+      title: "Vision",
+      desc: "At ArmourIQ, our vision is to create a future where cybersecurity is universally accessible, empowering every organization to protect its digital assets and thrive in a secure digital environment.",
     },
     {
       id: 2,
-      logo: <FaEye size={30} />,
-      title: "Our Vision",
-      desc: "At ArmourIQ, our vision is to democratize cybersecurity. We believe robust cybersecurity should be a fundamental right, not a privilege reserved for a select few. Our commitment to Universal Access ensures that every organization, regardless of size, can protect its digital assets effectively. Our approach to Inclusivity fosters a secure digital environment where every business has the opportunity to thrive.",
+      logo: <FaBullseye size={60} />,
+      title: "Mission",
+      desc: "Our mission is to make the internet safer and more secure for all businesses. We are dedicated to providing robust cybersecurity solutions that protect every organization and foster a secure digital environment.",
     },
     {
       id: 3,
-      logo: <FaHandshake size={30} />,
-      title: "Our Values",
-      desc: "ArmourIQ is driven by a commitment to excellence, innovation, integrity, client focus, collaboration, and continuous learning. Our mission is to deliver exceptional solutions that meet the evolving needs of our clients. In today’s digital landscape, we enable businesses to succeed through a strong culture of teamwork and growth.",
+      logo: <FaHandshake size={60} />,
+      title: "Values",
+      desc: "We are committed to excellence, innovation, and client focus, delivering exceptional solutions that evolve with our clients' needs. Through a culture of teamwork and continuous learning, we empower businesses to thrive in the digital landscape.",
     },
   ];
 
@@ -137,14 +137,16 @@ const AboutUs = () => {
         initial={{ opacity: 0, y: -70 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="relative">
+        className="relative"
+      >
         <div className=" bg-[#004AAD] opacity-100 h-[250px]"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5, delay: 0.4 }}
-            className="text-[4xl] md:text-[45px] text-white font-semibold mt-[80px] max-sm:mt-[70px] max-sm:text-5xl">
+            className="text-[4xl] md:text-[45px] text-white font-semibold mt-[80px] max-sm:mt-[70px] max-sm:text-5xl"
+          >
             About Us
           </motion.div>
         </div>
@@ -162,43 +164,52 @@ const AboutUs = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
-            className="w-full">
+            className="w-full"
+          >
             <p className="text-black font-normal text-sm md:text-xl mt-3 text-pretty">
-              ArmourIQ is a cybersecurity consulting firm dedicated to safeguarding organisations from evolving threats. Our team of experts provides tailored Cyber Security solutions to protect your critical assets and ensure compliance with industry regulations.
+              ArmourIQ is a cybersecurity consulting firm dedicated to
+              safeguarding organisations from evolving threats. Our team of
+              experts provides tailored Cyber Security solutions to protect your
+              critical assets and ensure compliance with industry regulations.
             </p>
           </motion.div>
           <div className="flex flex-col w-full lg:flex-row items-center mt-6 lg:mt-10 ">
             <div className="w-full">
-              <div className="flex max-md:flex-wrap justify-center md:justify-between gap-4">
+              <div className=" bg-[#F6F5F5] flex max-md:flex-wrap justify-center">
                 {visionMissionValues.map((item) => (
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ ease: "easeInOut", duration: 0.5 }}
                     key={item.id}
-                    className="bg-[#F6F5F5] text-black p-6 rounded-lg flex flex-col items-center border-[#004AAD] border-[1px] hover:bg-[#004AAD] hover:text-white hover:border-white hover:border-[1px] w-[28rem] py-8 lg:py-16 transition-all duration-300 md:mt-3 hover:drop-shadow-lg"
+                    className=" text-black p-6 rounded-0 flex flex-col items-center w-[28rem] py-8 lg:py-16 transition-all duration-300 md:mt-3"
                   >
-                    <div className="flex items-center mb-2">
-                      <div className="mr-2">{item.logo}</div>
-                      <h3 className="text-lg md:text-xl font-semibold text-center">
-                        {item.title}
-                      </h3>
+                    {" "}
+                    <div className="flex flex-row gap-4">
+                      <div className="flex flex-col items-center mb-2">
+                        <div className="">{item.logo}</div>
+                        <h3 className="text-lg md:text-xl font-semibold text-center">
+                          {item.title}
+                        </h3>
+                        <p className="text-start text-sm md:text-[15px]">
+                          {item.desc}
+                        </p>
+                      </div>
+                      {item.id != 3 && <div className="bg-white h-[220px] w-[15px] max-sm:hidden"></div> }
                     </div>
-                    <p className="text-center text-sm md:text-[17px]">
-                      {item.desc}
-                    </p>
                   </motion.div>
                 ))}
               </div>
             </div>
           </div>
-
+          
           {/* Counter Animation */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 0.5 }}
-            className="flex flex-row items-center justify-center py-4 gap-x-14 gap-y-4 lg:gap-24 flex-wrap max-md:grid max-md:grid-rows-2 bg-[#004bae] mt-[70px]">
+            className="flex flex-row items-center justify-center py-4 gap-x-14 gap-y-4 lg:gap-24 flex-wrap max-md:grid max-md:grid-rows-2 bg-[#004bae] mt-[70px]"
+          >
             <div className="flex flex-col items-center">
               <div className="flex flex-row">
                 <CountUp
@@ -271,22 +282,32 @@ const AboutUs = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeInOut", duration: 0.5 }}
-              className="row-start-1 row-end-2 col-start-1 col-end-7 md:col-end-5 ">
-              <h2 className="text-black font-semibold text-2xl md:mt-8">
+              className="row-start-1 row-end-2 col-start-1 col-end-7 md:col-end-5 "
+            >
+              {/* <h2 className="text-black font-semibold text-2xl md:mt-8">
                 Why choose us
-              </h2>
+              </h2> */}
               <h4 className="text-black font-bold text-3xl mt-3">
                 Your Trusted Partner in Cybersecurity
               </h4>
               <p className="text-black font-normal text-wrap mt-3">
-                ArmourIQ is more than just a service provider—we are your strategic partner in safeguarding your business. With a team of seasoned cybersecurity experts, we deliver unparalleled protection against the latest cyber threats. Our commitment to excellence, deep industry knowledge, and focus on customer satisfaction distinguish us within the cybersecurity industry. Trust ArmourIQ to not only defend your organization but also to enhance your overall security posture, ensuring long-term resilience and success.
+                ArmourIQ is more than just a service provider—we are your
+                strategic partner in safeguarding your business. With a team of
+                seasoned cybersecurity experts, we deliver unparalleled
+                protection against the latest cyber threats. Our commitment to
+                excellence, deep industry knowledge, and focus on customer
+                satisfaction distinguish us within the cybersecurity industry.
+                Trust ArmourIQ to not only defend your organization but also to
+                enhance your overall security posture, ensuring long-term
+                resilience and success.
               </p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeInOut", duration: 0.5 }}
-              className="row-start-3 sm:row-start-2 row-end-3 z-30 sm:row-end-4 col-start-1 col-end-5 sm:col-end-3 xl:col-end-4">
+              className="row-start-3 sm:row-start-2 row-end-3 z-30 sm:row-end-4 col-start-1 col-end-5 sm:col-end-3 xl:col-end-4"
+            >
               <img
                 src={cybersec_engineer}
                 className="object-cover w-full h-full rounded-lg"
@@ -296,7 +317,8 @@ const AboutUs = () => {
               initial={{ opacity: 0, x: -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
-              className="flex items-center max-[550px]:col-start-4 z-20 max-[550px]:col-end-7 col-start-3 xl:col-start-4 col-end-5 bg-[#F6F5F5] rounded-lg px-4 max-sm:py-3 xl:px-2 drop-shadow-lg border-[#004AAD] border-[1px]">
+              className="flex items-center max-[550px]:col-start-4 z-20 max-[550px]:col-end-7 col-start-3 xl:col-start-4 col-end-5 bg-[#F6F5F5] rounded-lg px-4 max-sm:py-3 xl:px-2 drop-shadow-lg border-[#004AAD] border-[1px]"
+            >
               <div className="flex max-lg:flex-col xl:flex-col xl:items-center gap-2 max-lg:items-center">
                 <FaUser size={25} className="" />
                 <div>
@@ -304,8 +326,7 @@ const AboutUs = () => {
                     Comprehensive Solutions
                   </h1>
                   <p className="max-lg:text-center xl:text-center">
-                    Full-spectrum protection, from threat detection to
-                    response.
+                    Full-spectrum protection, from threat detection to response.
                   </p>
                 </div>
               </div>
@@ -314,7 +335,8 @@ const AboutUs = () => {
               initial={{ opacity: 0, x: -70 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeInOut", duration: 0.5, delay: 0.3 }}
-              className="flex items-center max-sm:py-3 z-20 max-sm:row-start-2 col-start-1 sm:col-start-3 xl:col-start-4 max-[550px]:col-end-4 col-end-3 sm:col-end-5 bg-[#F6F5F5] rounded-lg px-4 xl:px-2 drop-shadow-lg border-[#004AAD] border-[1px]">
+              className="flex items-center max-sm:py-3 z-20 max-sm:row-start-2 col-start-1 sm:col-start-3 xl:col-start-4 max-[550px]:col-end-4 col-end-3 sm:col-end-5 bg-[#F6F5F5] rounded-lg px-4 xl:px-2 drop-shadow-lg border-[#004AAD] border-[1px]"
+            >
               <div className="flex max-lg:flex-col gap-2 xl:flex-col xl:items-center max-lg:items-center">
                 <FaUser size={25} className="" />
                 <div>
@@ -342,7 +364,8 @@ const AboutUs = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.5 }}
-          className="text-black mx-4 md:ml-[65px] text-2xl md:text-3xl font-semibold mt-[65px]">
+          className="text-black mx-4 md:ml-[65px] text-2xl md:text-3xl font-semibold mt-[65px]"
+        >
           Discover exceptional experiences through testimonials from our
           satisfied customers
         </motion.div>
@@ -370,16 +393,13 @@ const AboutUs = () => {
           </div>
         </div>
         <Team />
-        <div className="res-width bg-black/50 h-[1px] mt-[3rem]">
-
-        </div>
+        <div className="res-width bg-black/50 h-[1px] mt-[3rem]"></div>
         <div className="res-width flex flex-col lg:flex-row justify-between mt-[40px] max-sm:mt-[70px] gap-8">
           <div className="flex flex-col ">
             <h1 className="text-black font-semibold text-[18px] lg:max-w-[25rem]">
               Secure Your Business with ArmourIQ
               <br />
-              Have questions or need help?{" "}
-              Our experts are here for you.
+              Have questions or need help? Our experts are here for you.
             </h1>
           </div>
           <div className="flex lg:w-[65%] max-sm:flex-col justify-between gap-4">
@@ -405,7 +425,11 @@ const AboutUs = () => {
                     </h5>
                   </div>
                   <div className="flex flex-row items-center mb-2 mt-4">
-                    <MdOutlineEmail color="#004AAD" className="mr-2" size={22} />
+                    <MdOutlineEmail
+                      color="#004AAD"
+                      className="mr-2"
+                      size={22}
+                    />
                     <h5 className="text-black font-semibold ml-1">
                       hello@armourIQ.com
                     </h5>
@@ -414,7 +438,8 @@ const AboutUs = () => {
               </div>
             </div>
             <div className="mb-8">
-              <form className="flex flex-col text-black"
+              <form
+                className="flex flex-col text-black"
                 onSubmit={handleSubmit}
               >
                 <input

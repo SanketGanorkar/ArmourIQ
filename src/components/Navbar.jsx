@@ -53,7 +53,6 @@ const Navbar = () => {
               </li>
               <li
                 className="relative group text-[20px] font-medium cursor-pointer"
-              // onMouseEnter={() => setOpen(pre => !pre)}
               >
                 <p
                   onClick={() => {
@@ -68,17 +67,18 @@ const Navbar = () => {
                   whileInView={{ scaleY: 1 }}
                   exit={{ scaleY: 0 }}
                   style={{ transformOrigin: "top" }}
-                  className={`hidden md:group-hover:grid pt-6 md:hover:grid absolute bg-white h-auto w-[30rem] -left-[10rem] top-[1.5rem] text-[3px] grid grid-cols-2`}>
+                  className={`hidden md:group-hover:grid pt-6 md:hover:grid absolute bg-white h-auto w-[30rem] -left-[10rem] top-[1.5rem] text-base grid grid-cols-2`}>
                   <p onClick={() => navigate("/services/cloud")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Cloud Security</p>
                   <p onClick={() => navigate("/services/mobile")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Mobile Security</p>
                   <p onClick={() => navigate("/services/application")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Application Security</p>
                   <p onClick={() => navigate("/services/network")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Network Security</p>
                   <p onClick={() => navigate("/services/audit")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Audit & Compliance</p>
                   <p onClick={() => navigate("/services/soc")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">SOC & MDR Services</p>
-                  <p onClick={() => navigate("/services/maturity")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Cyber Security Maturity</p>
+                  
                   <p onClick={() => navigate("/services/virtual")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Virtual CISO as a Service</p>
-                  <p onClick={() => navigate("/services/awareness")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Security Program</p>
-                  <p className="px-6 py-3 bg-zinc-50"></p>
+                  <p onClick={() => navigate("/services/awareness")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Security Awareness</p>
+                  <p className="px-6 py-3 bg-zinc-50 hover:bg-zinc-200/50" onClick={() => navigate("/services/audit")}>PCI DSS</p>
+                  <p onClick={() => navigate("/services/maturity")} className="px-6 py-3 hover:bg-zinc-200/50 bg-zinc-50">Cyber Maturity Assessment</p>
                 </motion.div>
               </li>
               <li

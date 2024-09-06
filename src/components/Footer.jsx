@@ -149,9 +149,9 @@ const Footer = () => {
                 navigate("/services/virtual")
               }
               }
-              className="text-white text-[15px] mb-4 hover:text-[#004AAD]"
+              className="text-white text-[15px] mb-4 hover:text-[#004AAD] cursor-pointer"
             >
-              Staff & Augmentation
+              FlexSecure Workforce
             </p>
             <Link
               className="text-white text-[15px] mb-4 hover:text-[#004AAD]"

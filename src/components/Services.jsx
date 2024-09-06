@@ -22,7 +22,7 @@ const Services = () => {
         "Optimized Security Configurations",
         "Ongoing Security Enhancement"
       ],
-      logo: "../assets/Secure Cloud.png",
+      logo: "../assets/Cloud Security.svg",
     },
     {
       id: 2,
@@ -218,7 +218,7 @@ const Services = () => {
                   <div className="relative bg-[#F6F5F5] h-full text-black p-6 rounded-lg flex flex-col justify-between items-center pt-32 border-[#004bae] border-[1px] w-full cursor-pointer hover:bg-[#004bae] hover:border-white hover:border-[1px] hover:text-white transition-all duration-300">
                     <div
                       className="translate-y-0 transition ease-in-out group-hover:-translate-y-[1rem] h-[6rem] w-[6rem] flex items-center justify-center absolute top-5 bg-slate-300/50 group-hover:bg-slate-300/20 rounded-full drop-shadow-xl">
-                      <img src={item.logo} alt="" className="h-[60%] w-auto object-cover " />
+                      <img src={item.logo} className="h-[60%] w-auto object-cover hover:text-white" />
                     </div>
                     <div className="w-full h-full flex flex-col items-center justify-center">
                       {/* <img src={item.logo} className="" /> */}
@@ -234,24 +234,6 @@ const Services = () => {
                     </div>
                   </div>
                 </Link>
-
-                {/* For Mobile */}
-                {/* <div className="bg-[#F6F5F5] text-black p-6 rounded-lg flex flex-col justify-between items-center border-[#004bae] border-[1px] lg:hidden hover:bg-[#004bae] hover:border-white hover:border-[1px] hover:text-white transition-all duration-300">
-                  <div className="w-full h-full flex flex-col items-center justify-center">
-                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <ul className="list-disc text-left pl-5 mb-2">
-                      {item.highlights.slice(0, 3).map((highlight, index) => (
-                        <li key={index}>{highlight}</li>
-                      ))}
-                    </ul>
-                    <Link
-                      to={item.path}
-                      className="text-black mt-2 hover:font-bold"
-                    >
-                      <FaRegArrowAltCircleRight size={30} />
-                    </Link>
-                  </div>
-                </div> */}
               </motion.div>
             ))}
           </div>

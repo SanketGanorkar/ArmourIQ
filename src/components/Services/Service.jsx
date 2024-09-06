@@ -30,17 +30,17 @@ function Service() {
   const sidebar = [
     {
       id: 1,
-      title: "Cloud security",
+      title: "Cloud Security",
       path: "/services/cloud",
     },
     {
       id: 2,
-      title: "Mobile security",
+      title: "Mobile Security",
       path: "/services/mobile",
     },
     {
       id: 3,
-      title: "Application security",
+      title: "Application Security",
       path: "/services/application",
     },
     {
@@ -70,7 +70,7 @@ function Service() {
     },
     {
       id: 9,
-      title: "Security Program",
+      title: "Security Awareness",
       path: "/services/awareness",
     },
   ];
@@ -132,10 +132,10 @@ function Service() {
               transition={{ ease: "easeInOut", duration: 0.5 }}
               className="intro-left">
               <div className="heading">
-                {services[param].heading1} <br className="hidden sm:block" />{" "}
+                <br className="hidden sm:block" />{" "}
                 {services[param].heading2}
               </div>
-              <p className="mt-4">{services[param].content}</p>
+              <p className="mt-0">{services[param].content}</p>
             </motion.div>
           </div>
           <div className="bg-[#F6F5F5] h-fit rounded-[15px] border-black border-[1px]">

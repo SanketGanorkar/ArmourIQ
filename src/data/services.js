@@ -1,6 +1,6 @@
 export const services = {
     cloud: {
-        topic: "Cloud Security Services",
+        topic: "Cloud Security",
         image: "/Cloud.jpg",
         heading1: "Cloud Security",
         // heading2: "( Safeguarding Your Devices and Data ) ",
@@ -69,7 +69,7 @@ export const services = {
         ]
     },
     mobile: {
-        topic: "Mobile Security Services",
+        topic: "Mobile Security",
         image: "/Mobile.jpg",
         heading1: "Mobile Security",
         // heading2: "( Safeguarding Your Devices and Data ) ",
@@ -156,7 +156,7 @@ export const services = {
     },
 
     application: {
-        topic: "Web Application Security Testing Services",
+        topic: "Application Security",
         image: "/Application.jpg",
         heading1: "Application Security",
         // heading2: "( Safeguarding Your Devices and Data )",
@@ -400,7 +400,7 @@ export const services = {
     },
 
     awareness: {
-        topic: "Security Awareness Program",
+        topic: "Security Awareness",
         image: "/Awareness.jpg",
         heading1: "Security Awareness",
         // heading2: "( Building a Culture of Cyber Vigilance)",
@@ -465,7 +465,7 @@ export const services = {
     },
 
     maturity: {
-        topic: "Cyber Security Maturity Assessment",
+        topic: "Cyber Maturity Assessment",
         image: "/cyber_security_maturity.jpeg",
         heading1: "Cyber Security Maturity",
         // heading2: "(GDPR, HIPAA, CCPA & Other Regulations)",
@@ -565,7 +565,7 @@ export const services = {
     },
 
     network: {
-        topic: "Network Security Services",
+        topic: "Network Security",
         image: "/Network.jpg",
         heading1: "Network Security",
         // heading2: "( Safeguarding Your Devices and Data )",
@@ -811,7 +811,7 @@ export const services = {
     },
 
     virtual: {
-        topic: "vCISO Services",
+        topic: "vCISO",
         image: "/Virtual.jpeg",
         heading1: "Virtual CISCO",
         // heading2: "Our Virtual Chief Information Security Officer (vCISO) Services",
