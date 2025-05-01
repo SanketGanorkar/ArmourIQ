@@ -63,7 +63,7 @@ const Contact = () => {
       });
   };
   return (
-    <div className="flex flex-col bg-[#262626] justify-center flex flex-col items-center">
+    <div className="flex flex-col bg-[#262626] justify-center items-center">
       <motion.div
         initial={{ opacity: 0, y: -70 }}
         animate={{ opacity: 1, y: 0 }}

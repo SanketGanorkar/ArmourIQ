@@ -195,14 +195,14 @@ const AboutUs = () => {
                           {item.desc}
                         </p>
                       </div>
-                      {item.id != 3 && <div className="bg-white h-[220px] w-[15px] max-sm:hidden"></div> }
+                      {item.id != 3 && <div className="bg-white h-[220px] w-[15px] max-sm:hidden"></div>}
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
           </div>
-          
+
           {/* Counter Animation */}
           <motion.div
             initial={{ opacity: 0 }}
